@@ -26,8 +26,8 @@ export default function NavC() {
                 key={i}
                 className={
                   route.pathname != e.href
-                    ? `hover:border-[#F1CCD6] duration-1000 transition-all hover:underline decoration-dotted underline-offset-8 decoration-yellow-400`
-                    : `border-[#F1CCD6] duration-1000 underline decoration-dotted underline-offset-8 decoration-yellow-400 transition-all`
+                    ? `hover:border-[#F1CCD6] duration-1000 transition-all hover:underline decoration-wavy underline-offset-[5px] decoration-yellow-400`
+                    : `border-[#F1CCD6] duration-1000 underline decoration-wavy underline-offset-[5px] decoration-yellow-400 transition-all`
                 }
                 href={e.href}
               >

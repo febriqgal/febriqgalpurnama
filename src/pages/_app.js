@@ -2,8 +2,8 @@ import "@/styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import NextNProgress from "nextjs-progressbar";
 import { useTheme } from "next-themes";
+
 export default function App({ Component, pageProps }) {
-  const { systemTheme, theme, setTheme } = useTheme();
   return (
     <>
       <NextNProgress
