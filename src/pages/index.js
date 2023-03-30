@@ -122,7 +122,7 @@ export default function Home() {
               </svg>
             </Tooltip>
           </div>
-          <div className="flex lg:flex-row flex-col gap-2 mt-4">
+          <div className="flex lg:flex-row flex-col gap-2 mt-4 ">
             <Button
               shadow
               onPress={() => {
