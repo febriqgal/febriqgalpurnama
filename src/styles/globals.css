@@ -83,7 +83,7 @@
 }
 @layer base {
   body {
-    @apply dark:bg-slate-900 bg-white;
+    @apply dark:bg-slate-900 bg-slate-50;
     @apply dark:text-slate-50 text-slate-900;
   }
 }

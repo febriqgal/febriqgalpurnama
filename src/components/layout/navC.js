@@ -14,7 +14,7 @@ export default function NavC() {
   return (
     <div>
       <div className="h-2 w-full bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100"></div>
-      <div className="bg-white text-sm lg:text-base px-5 lg:px-36 dark:bg-slate-900 flex justify-between items-center py-7 place-items-center   w-full ">
+      <div className="bg-slate-50 text-sm lg:text-base px-5 lg:px-36 dark:bg-slate-900 flex justify-between items-center py-7 place-items-center   w-full ">
         <div className="flex items-center justify-center gap-4 place-items-center font-bold">
           {navigation.map((e, i) => {
             return (

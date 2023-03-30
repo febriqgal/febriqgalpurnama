@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 export default function FooterC() {
   const route = useRouter();
   return (
-    <footer className="bg-slate-900 rounded-t-3xl border-t">
+    <footer className="dark:bg-slate-900 bg-slate-100 rounded-t-3xl border-t">
       <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <div className="flex justify-center space-x-6">
           {/* ig */}
@@ -15,7 +15,7 @@ export default function FooterC() {
             href={"https://www.instagram.com/febriqgal_/"}
           >
             <svg
-              className=" fill-slate-50  hover:-translate-y-2 duration-700 h-6"
+              className=" dark:fill-slate-50 fill-slate-900  hover:-translate-y-2 duration-700 h-6"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ export default function FooterC() {
             href={"https://www.linkedin.com/in/febriqgal/"}
           >
             <svg
-              className=" fill-slate-50  hover:-translate-y-2 duration-700 h-6"
+              className=" dark:fill-slate-50 fill-slate-900  hover:-translate-y-2 duration-700 h-6"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ export default function FooterC() {
             href={"https://twitter.com/febriqgal_"}
           >
             <svg
-              className=" fill-slate-50  hover:-translate-y-2 duration-700 h-6"
+              className=" dark:fill-slate-50 fill-slate-900  hover:-translate-y-2 duration-700 h-6"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@ export default function FooterC() {
             href={"https://github.com/febriqgal"}
           >
             <svg
-              className=" fill-slate-50  hover:-translate-y-2 duration-700 h-6"
+              className=" dark:fill-slate-50 fill-slate-900  hover:-translate-y-2 duration-700 h-6"
               width="24"
               height="24"
               viewBox="0 0 24 24"

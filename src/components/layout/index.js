@@ -1,7 +1,30 @@
 import Head from "next/head";
 import FooterC from "./footerC";
 import NavC from "./navC";
+import { useState, useEffect } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import "animate.css";
+
 export default function Layout({ children }) {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  const [clientWindowHeight, setClientWindowHeight] = useState("");
+  const [backgroundTransparacy, setBackgroundTransparacy] = useState(0);
+  const [padding, setPadding] = useState(10);
+  const [boxShadow, setBoxShadow] = useState(0);
+  let backgroundTransparacyVar = clientWindowHeight / 600;
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
+  const handleScroll = () => {
+    setClientWindowHeight(window.scrollY);
+  };
   return (
     <>
       <Head>
@@ -11,32 +34,49 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavC />
-
-      <div
-        onClick={() => {
-          document.documentElement.scrollTop = 0;
-        }}
-        className=" fixed right-5 bottom-5 z-[99999] hover:cursor-pointer"
-      >
-        <svg
-          className="h-9 dark:fill-white fill-slate-900"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+      {backgroundTransparacyVar > 0.5 ? (
+        <div
+          onClick={() => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+          }}
+          className="border dark:border-slate-100 p-1 rounded-xl animate__animated animate__backInDown fixed right-5 bottom-5 z-[99999] hover:cursor-pointer duration-500 transition-all"
         >
-          <path
-            opacity="0.4"
-            d="M7 9L17 9C19.2091 9 21 10.7909 21 13V17C21 19.2091 19.2091 21 17 21H7C4.79086 21 3 19.2091 3 17L3 13C3 10.7909 4.79086 9 7 9Z"
-          />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M8.46967 6.53033C8.17678 6.23744 8.17678 5.76256 8.46967 5.46967L11.4697 2.46967C11.7626 2.17678 12.2374 2.17678 12.5303 2.46967L15.5303 5.46967C15.8232 5.76256 15.8232 6.23744 15.5303 6.53033C15.2374 6.82322 14.7626 6.82322 14.4697 6.53033L12.75 4.81066L12.75 15C12.75 15.4142 12.4142 15.75 12 15.75C11.5858 15.75 11.25 15.4142 11.25 15L11.25 4.81066L9.53033 6.53033C9.23744 6.82322 8.76256 6.82322 8.46967 6.53033Z"
-          />
-        </svg>
-      </div>
-
-      <main className=" px-5 lg:px-36 min-h-screen">{children}</main>
+          <svg
+            className="h-8 dark:fill-white fill-slate-900"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              opacity="0.4"
+              d="M7 9L17 9C19.2091 9 21 10.7909 21 13V17C21 19.2091 19.2091 21 17 21H7C4.79086 21 3 19.2091 3 17L3 13C3 10.7909 4.79086 9 7 9Z"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8.46967 6.53033C8.17678 6.23744 8.17678 5.76256 8.46967 5.46967L11.4697 2.46967C11.7626 2.17678 12.2374 2.17678 12.5303 2.46967L15.5303 5.46967C15.8232 5.76256 15.8232 6.23744 15.5303 6.53033C15.2374 6.82322 14.7626 6.82322 14.4697 6.53033L12.75 4.81066L12.75 15C12.75 15.4142 12.4142 15.75 12 15.75C11.5858 15.75 11.25 15.4142 11.25 15L11.25 4.81066L9.53033 6.53033C9.23744 6.82322 8.76256 6.82322 8.46967 6.53033Z"
+            />
+          </svg>
+        </div>
+      ) : (
+        <></>
+      )}
+      <motion.div
+        className="progress-bar bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 bottom-0 h-1 z-[99999] rounded-full fixed left-0 right-0 origin-top"
+        style={{ scaleX }}
+      />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
+        <main className=" px-5 lg:px-36 min-h-screen">{children}</main>
+      </motion.div>
       <FooterC />
     </>
   );

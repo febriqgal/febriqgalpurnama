@@ -6,6 +6,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Tooltip } from "@nextui-org/react";
 import Gambar from "../../public/20.png";
+import { TypeAnimation } from "react-type-animation";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -15,12 +17,20 @@ export default function Home() {
       <div className="flex flex-col lg:flex-row w-full items-center justify-between ">
         <div>
           <h1 className="text-lg font-medium">{`Hi! I'm`}</h1>
-          <h1 className="text-5xl font-bold">Febriqgal Purnama</h1>
-          <h1 className="mt-2 font-bold">
-            Ipsum in labore et qui ex laboris eiusmod. Cillum veniam occaecat
-            qui esse aute officia esse ea ex. Non qui enim in dolore et qui
-            nulla et non tempor proident occaecat mollit.
-          </h1>
+          <h1 className="text-5xl font-bold mb-2">Febriqgal Purnama</h1>
+          <TypeAnimation
+            sequence={[
+              "Software Engineer |",
+              1000,
+              "Software Engineer | Web App Developers",
+              1000,
+              "Software Engineer | Mobile App Developers",
+              1000,
+            ]}
+            speed={50}
+            style={{ fontSize: "16px" }}
+            repeat={Infinity}
+          />
           <div className="flex gap-6 mt-4">
             <Tooltip content="NextJS" color="invert" placement="bottom">
               <svg
