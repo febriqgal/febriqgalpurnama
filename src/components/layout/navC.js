@@ -1,16 +1,15 @@
-import React, { useState } from "react";
-import Link from "next/link";
-import { useTheme } from "next-themes";
 import { Switch } from "@nextui-org/react";
-import { SunIcon } from "../sunicon";
-import { MoonIcon } from "../moonicon";
+import { useTheme } from "next-themes";
+import Link from "next/link";
 import { useRouter } from "next/router";
+import { MoonIcon } from "../moonicon";
+import { SunIcon } from "../sunicon";
 export default function NavC() {
   const { systemTheme, theme, setTheme } = useTheme();
-  const [darkMode, setDarkMode] = useState(false);
+
   const navigation = [
     { title: "Home", href: "/" },
-    { title: "Project", href: "/project" },
+    { title: "Portfolio", href: "/portfolio" },
     { title: "Contact", href: "/contact" },
     { title: "About Me", href: "/aboutme" },
   ];
@@ -39,11 +38,9 @@ export default function NavC() {
         <Switch
           onChange={() => {
             if (theme == "dark") {
-              setDarkMode(false);
               setTheme("light");
               // localStorage.theme = "light";
             } else {
-              setDarkMode(true);
               setTheme("dark");
               // localStorage.theme = "dark";
             }

@@ -1,12 +1,10 @@
 import Layout from "@/components/layout";
 import { Button, Tooltip } from "@nextui-org/react";
-import { Over_the_Rainbow } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { TypeAnimation } from "react-type-animation";
 import Gambar from "../../public/20.png";
-const caveat = Over_the_Rainbow({ subsets: ["latin"], weight: ["400"] });
 
 export default function Home() {
   const route = useRouter();
@@ -180,10 +178,7 @@ export default function Home() {
         </a>
       </div>
       <section id="project" className="min-h-screen py-10">
-        <h1
-          style={caveat.style}
-          className="text-center mb-5 font-bold"
-        >{`My Project`}</h1>
+        <h1 className="text-center mb-5 font-bold">{`My Porfolio`}</h1>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
           <div className="rounded-lg border hover:scale-105 duration-500 hover:cursor-pointer dark:bg-slate-700 bg-slate-200 w-full h-[200px] text-center "></div>
           <div className="rounded-lg border hover:scale-105 duration-500 hover:cursor-pointer dark:bg-slate-700 bg-slate-200 w-full h-[200px] text-center "></div>
