@@ -8,13 +8,13 @@ export default function NavC() {
     { title: "Home", href: "/" },
     { title: "Project", href: "/project" },
     { title: "Contact", href: "/contact" },
-    { title: "About Me", href: "/about" },
+    { title: "About Me", href: "/aboutme" },
   ];
   const route = useRouter();
   return (
     <div>
-      <div className="h-2 w-full bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 fixed z-[99999]"></div>
-      <div className="bg-white text-sm lg:text-base px-5 lg:px-36 dark:bg-slate-900 flex justify-between items-center py-7 place-items-center fixed w-full z-[9999]">
+      <div className="h-2 w-full bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100"></div>
+      <div className="bg-white text-sm lg:text-base px-5 lg:px-36 dark:bg-slate-900 flex justify-between items-center py-7 place-items-center   w-full ">
         <div className="flex items-center justify-center gap-4 place-items-center font-bold">
           {navigation.map((e, i) => {
             return (
