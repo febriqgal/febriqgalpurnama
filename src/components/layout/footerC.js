@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 export default function FooterC() {
   const route = useRouter();
   return (
-    <footer className="bg-slate-900 rounded-t-lg mt-4">
+    <footer className="bg-slate-900 rounded-t-3xl mt-4 border-t">
       <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <div className="mt-8 flex justify-center space-x-6">
           {/* ig */}
@@ -26,7 +26,7 @@ export default function FooterC() {
               />
               <circle cx="18" cy="6" r="1" />
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 clip-rule="evenodd"
                 d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17ZM12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
               />
