@@ -41,7 +41,7 @@ export default function About() {
         <br />
         <div className="h-[460px] aspect-square overflow-hidden rounded-lg border">
           <Image
-            className="scale-[2.5] hover:scale-[2.9] duration-500 hover:rotate-2 transition-transform translate-x-3"
+            className="scale-[2.5] hover:scale-[2.9] duration-500 transition-transform translate-x-3"
             src={Gambar1}
             alt={"Febriqgal"}
           />
