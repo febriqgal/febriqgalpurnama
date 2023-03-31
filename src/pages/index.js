@@ -53,10 +53,10 @@ export default function Home() {
           </Button>
         </Modal.Footer>
       </Modal>
-      <div className="flex flex-col lg:flex-row w-full items-center justify-between ">
+      <div className="flex flex-col sm:flex-row w-full items-center justify-between">
         <div>
-          <h1 className="text-lg font-medium">{`Hi! I'm`}</h1>
-          <h1 className="text-5xl font-black dark:bg-clip-text dark:text-transparent text-white bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200 dark:box-decoration-slice dark:bg-gradient-to-r dark:from-indigo-200 dark:via-red-200 dark:to-yellow-100">
+          <h1 className="text-lg font-medium">{`Hi!👋 I'm`}</h1>
+          <h1 className="text-5xl font-black bg-clip-text text-transparent box-decoration-slice bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200">
             Febriqgal Purnama
           </h1>
           <TypeAnimation
@@ -202,7 +202,6 @@ export default function Home() {
             </Button>
           </div>
         </div>
-
         <Image
           className="m-auto lg:m-0 my-8 lg:my-0"
           height={"470"}
@@ -237,28 +236,26 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {portfolio.slice(0, 6).map((e, i) => {
             return (
-              <>
-                <div
-                  key={i}
-                  className="rounded-lg border border-slate-950 dark:border-slate-50 border-dashed hover:scale-105 duration-500  dark:bg-slate-900 bg-slate-100 w-full h-auto text-center "
-                >
-                  <div className="text-left p-4">
-                    <h1 className="font-bold">{`Portfolio ${i + 1}`}</h1>
-                    <h1 className="text-sm text-justify mb-2">
-                      Ut sunt minim proident voluptate commodo aute enim minim
-                      eu consequat.
-                    </h1>
-                    <div className="border-slate-950 border dark:border-slate-50 border-dashed rounded-lg overflow-clip">
-                      <img
-                        className="object-cover aspect-video w-full"
-                        src={`https://picsum.photos/id/87${i}/900/1000?grayscale&blur=2`}
-                        alt="#"
-                      />
-                    </div>
-                    <h1 className="text-xs mt-2 underline underline-offset-4 decoration-dotted hover:cursor-pointer">{`See More >`}</h1>
+              <div
+                key={i}
+                className="rounded-lg border border-slate-950 dark:border-slate-50 border-dashed hover:scale-105 duration-500  dark:bg-slate-900 bg-slate-100 w-full h-auto text-center "
+              >
+                <div className="text-left p-4">
+                  <h1 className="font-bold">{`Portfolio ${i + 1}`}</h1>
+                  <h1 className="text-sm text-justify mb-2">
+                    Ut sunt minim proident voluptate commodo aute enim minim eu
+                    consequat.
+                  </h1>
+                  <div className="border-slate-950 border dark:border-slate-50 border-dashed rounded-lg overflow-clip">
+                    <img
+                      className="object-cover aspect-video w-full"
+                      src={`https://picsum.photos/id/87${i}/900/1000?grayscale&blur=2`}
+                      alt="#"
+                    />
                   </div>
+                  <h1 className="text-xs mt-2 underline underline-offset-4 decoration-dotted hover:cursor-pointer">{`See More >`}</h1>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>

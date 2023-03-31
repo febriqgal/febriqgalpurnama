@@ -6,6 +6,7 @@ import { Tooltip } from "@nextui-org/react";
 import Styles from "../../styles/Home.module.css";
 import Head from "next/head";
 export default function About() {
+  const a = <h1>ddd</h1>;
   return (
     <Layout>
       <Head>
@@ -16,26 +17,46 @@ export default function About() {
       </Head>
       <div className="flex flex-col-reverse lg:flex-row w-full justify-between items-center">
         <div className="w-full lg:pr-16 text-justify">
-          <h1 className="lg:text-4xl text-center text-3xl font-black dark:bg-clip-text dark:text-transparent text-white bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200 dark:box-decoration-slice dark:bg-gradient-to-r dark:from-slate-400 dark:via-orange-300 dark:to-yellow-200">
+          <h1 className="lg:text-4xl text-center text-3xl font-black bg-clip-text text-transparent text-white bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200 box-decoration-slice ">
             Febriqgal Purnama, S.Kom
+          </h1>
+
+          <br />
+
+          <h1>
+            Hello! I&apos;m Febriqgal. I graduated from a private university in
+            Padang city in 2023, I started studying programming in May 2020,
+            when the pandemic started. There wasn&apos;t much for me to do at
+            the time, so I decided to teach myself programming on YouTube, then
+            started watching a lot of YouTube videos to learn more about
+            programming, specifically{" "}
+            <span className="underline-offset-4 underline decoration-dotted">
+              Web Development
+            </span>
+            , and{" "}
+            <span className="underline-offset-4 underline decoration-dotted">
+              {" "}
+              Mobile Development
+            </span>
+            .
+            <br />
+            <br />
+            There is a lot of stuff and technology to learn in programming and I
+            am motivated to learn as much as I can. I enjoy learning something
+            new and getting feedback to improve and grow.
           </h1>
           <br />
           <h1>
-            Laboris cupidatat laborum do sint cillum aute laboris ipsum. Id
-            irure et consectetur aliquip commodo aute aute ullamco culpa
-            proident. Excepteur cillum labore esse dolore quis in ullamco
-            officia. Adipisicing voluptate duis nisi Lorem aliquip id. Sit
-            proident officia eiusmod velit. Aliquip pariatur sint est eiusmod in
-            reprehenderit pariatur amet voluptate ullamco occaecat est. Laborum
-            aute culpa officia in dolor eu consectetur nisi. Aute Lorem
-            adipisicing nisi adipisicing eiusmod duis in incididunt non enim in
-            tempor et labore. Sint laborum ut commodo ex magna. Lorem non ipsum
-            aute culpa. Ullamco dolor cupidatat aute nisi. Id anim id fugiat
-            duis cupidatat non sunt sit quis. Mollit nulla aliqua qui est
-            ullamco exercitation consequat id eu eu anim exercitation velit
-            voluptate. Pariatur fugiat consequat cillum sunt sunt. Esse occaecat
-            ipsum in do ut dolor nulla est eiusmod aute sint.
+            On this website, I will write to showcase my portfolio. I believe
+            that writing down what I&apos;ve learned is the best way to build a{" "}
+            <span className="underline-offset-4 underline decoration-dotted">
+              Personal Branding
+            </span>
           </h1>
+          <br />
+          <q className="italic text-xs">
+            {`Apa yang kita tanam, itu yang akan kita tuai.`}
+          </q>
         </div>
         <br />
         <div className="h-[460px] aspect-square overflow-hidden rounded-lg border">
