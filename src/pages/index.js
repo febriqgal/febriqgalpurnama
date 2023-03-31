@@ -1,5 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @next/next/no-img-element */
 import Layout from "@/components/layout";
-import { Button, Tooltip } from "@nextui-org/react";
+import { Button, Modal, Text, Tooltip, useModal } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -7,13 +9,56 @@ import { TypeAnimation } from "react-type-animation";
 import Gambar from "../../public/20.png";
 
 export default function Home() {
+  const { setVisible, bindings } = useModal();
+  const portfolio = [
+    { title: "", img: "" },
+    { title: "", img: "" },
+    { title: "", img: "" },
+    { title: "", img: "" },
+    { title: "", img: "" },
+    { title: "", img: "" },
+    { title: "", img: "" },
+    { title: "", img: "" },
+    { title: "", img: "" },
+    { title: "", img: "" },
+  ];
   const route = useRouter();
+  // useEffect(() => {
+  //   setVisible(true);
+  // }, []);
   return (
     <Layout>
+      <Modal
+        blur
+        scroll
+        width="600px"
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+        {...bindings}
+      >
+        <Modal.Header>
+          <Text id="modal-title" size={18}>
+            Pemberitahuan
+          </Text>
+        </Modal.Header>
+        <Modal.Body>
+          <h1 id="modal-description" className="text-center">
+            Website masih dalam tahap develepment, tetap tenang website masih
+            bisa digunakan👌
+          </h1>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button auto flat color="error" onPress={() => setVisible(false)}>
+            Tutup
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <div className="flex flex-col lg:flex-row w-full items-center justify-between ">
         <div>
           <h1 className="text-lg font-medium">{`Hi! I'm`}</h1>
-          <h1 className="text-5xl font-bold mb-2">Febriqgal Purnama</h1>
+          <h1 className="text-5xl font-black dark:bg-clip-text dark:text-transparent text-white bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200 dark:box-decoration-slice dark:bg-gradient-to-r dark:from-indigo-200 dark:via-red-200 dark:to-yellow-100">
+            Febriqgal Purnama
+          </h1>
           <TypeAnimation
             sequence={[
               "Software Engineer |",
@@ -27,7 +72,7 @@ export default function Home() {
             style={{ fontSize: "16px" }}
             repeat={Infinity}
           />
-          <div className="flex gap-6 mt-4">
+          <div className="grid grid-cols-7 lg:flex  gap-2 lg:gap-4 place-items-center mt-4">
             <Tooltip content="NextJS" color="invert" placement="bottom">
               <svg
                 className="fill-slate-900 dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
@@ -38,21 +83,14 @@ export default function Home() {
                 <path d="M11.6436 2C11.4967 2 11.3854 2.00108 11.3449 2.00558C11.3019 2.01 11.165 2.02308 11.0419 2.03292C8.20125 2.289 5.5405 3.8215 3.85525 6.17692C2.91683 7.48667 2.31667 8.97217 2.09 10.5458C2.00983 11.095 2 11.2573 2 12.002C2 12.7468 2.01 12.909 2.09 13.4583C2.63333 17.2133 5.30592 20.3683 8.93058 21.5371C9.57967 21.7463 10.2639 21.889 11.042 21.975C11.345 22.0083 12.6548 22.0083 12.9578 21.975C14.3009 21.8264 15.4388 21.4942 16.5609 20.9214C16.733 20.8334 16.7662 20.81 16.7428 20.7903C16.7272 20.7788 15.9939 19.7955 15.1142 18.607L13.5151 16.447L11.5112 13.4818C10.4086 11.8514 9.50142 10.5184 9.49358 10.5184C9.48575 10.5163 9.478 11.834 9.474 13.4426C9.46842 16.2594 9.46625 16.3728 9.431 16.4393C9.38017 16.5351 9.341 16.5741 9.259 16.6171C9.1965 16.6483 9.14167 16.6542 8.8465 16.6542H8.50817L8.41833 16.5975C8.36262 16.5626 8.31737 16.5133 8.28733 16.4548L8.24625 16.3668L8.25067 12.4477L8.25625 8.5265L8.31675 8.45025C8.34808 8.40917 8.41458 8.3565 8.46142 8.33108C8.54158 8.29192 8.57292 8.288 8.91108 8.288C9.31 8.288 9.37642 8.30358 9.48 8.41692C9.50942 8.44833 10.5944 10.0825 11.8925 12.0509C13.2068 14.0433 14.5219 16.0351 15.8378 18.0264L17.4213 20.4249L17.5013 20.3722C18.2112 19.9108 18.9617 19.254 19.5561 18.5699C20.821 17.1175 21.6363 15.3466 21.91 13.4583C21.9901 12.909 21.9998 12.7466 21.9998 12.002C21.9998 11.2573 21.9898 11.095 21.91 10.5457C21.3665 6.79067 18.694 3.63575 15.0694 2.46692C14.4301 2.25967 13.7497 2.11692 12.9873 2.03092C12.8465 2.01625 12.0842 2.00033 11.6436 2ZM15.034 8.01417C15.3234 8.01417 15.3742 8.01858 15.4387 8.05333C15.5327 8.10017 15.6088 8.19017 15.6363 8.28392C15.6518 8.33475 15.6557 9.42167 15.6517 11.8709L15.6462 15.3855L15.0265 14.4355L14.4047 13.4855V10.9305C14.4047 9.27883 14.4125 8.35025 14.4242 8.30533C14.4555 8.19592 14.5239 8.10983 14.6178 8.05908C14.6979 8.01792 14.727 8.01417 15.034 8.01417Z" />
               </svg>
             </Tooltip>
-            <Tooltip content="TailwindCSS" color="invert" placement="bottom">
+            <Tooltip content="Git" color="invert" placement="bottom">
               <svg
                 className="fill-slate-900 dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g clipPath="url(#clip0_2198_3297)">
-                  <path d="M12 6C9.33333 6 7.66667 7.33333 7 10C8 8.66667 9.16667 8.16667 10.5 8.5C11.2608 8.69 11.8042 9.24167 12.4067 9.85333C13.3875 10.8483 14.5217 12 17 12C19.6667 12 21.3333 10.6667 22 8C21 9.33333 19.8333 9.83333 18.5 9.5C17.7392 9.31 17.1958 8.75833 16.5933 8.14667C15.6133 7.15167 14.4792 6 12 6ZM7 12C4.33333 12 2.66667 13.3333 2 16C3 14.6667 4.16667 14.1667 5.5 14.5C6.26083 14.69 6.80417 15.2417 7.40667 15.8533C8.3875 16.8483 9.52167 18 12 18C14.6667 18 16.3333 16.6667 17 14C16 15.3333 14.8333 15.8333 13.5 15.5C12.7392 15.31 12.1958 14.7583 11.5933 14.1467C10.6133 13.1517 9.47917 12 7 12Z" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_2198_3297">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
+                <path d="M21.6217 11.1085L12.8892 2.37687C12.3858 1.87438 11.5708 1.87438 11.0658 2.37687L9.25667 4.18938L11.5567 6.48937C12.0942 6.31021 12.7058 6.43104 13.1308 6.85687C13.5608 7.28604 13.6792 7.90521 13.4958 8.44021L15.7108 10.6569C16.2483 10.471 16.8667 10.5919 17.2942 11.0194C17.895 11.6194 17.895 12.5894 17.2942 13.1894C16.695 13.7885 15.7267 13.7885 15.1275 13.1894C14.6783 12.7385 14.5658 12.0752 14.7908 11.526L12.7167 9.46271V14.9002C12.8633 14.9719 13.0017 15.0694 13.1233 15.1902C13.7175 15.791 13.7175 16.7594 13.1233 17.3569C12.5242 17.9577 11.5492 17.9577 10.9492 17.3569C10.35 16.7577 10.35 15.791 10.9492 15.1919C11.1008 15.0419 11.2717 14.9285 11.4533 14.8535V9.36271C11.2725 9.28687 11.1 9.17771 10.9533 9.02854C10.4992 8.57437 10.39 7.91021 10.6233 7.35437L8.36333 5.08354L2.375 11.0677C1.875 11.5719 1.875 12.3877 2.375 12.8919L11.1083 21.6227C11.6117 22.126 12.4267 22.126 12.93 21.6227L21.6217 12.931C22.1258 12.4285 22.1258 11.6127 21.6217 11.1085Z" />
               </svg>
             </Tooltip>
             <Tooltip content="Flutter" color="invert" placement="bottom">
@@ -107,6 +145,23 @@ export default function Home() {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path d="M15.1625 9.48417H11.3392V2H15.1625C17.2258 2 18.9042 3.67833 18.9042 5.74167C18.9042 7.805 17.2258 9.48417 15.1625 9.48417ZM12.565 8.25833H15.1625C16.55 8.25833 17.6783 7.12917 17.6783 5.7425C17.6783 4.35583 16.5492 3.22667 15.1625 3.22667H12.565V8.25833ZM12.565 9.48417H8.7425C6.67917 9.48417 5.00083 7.80583 5.00083 5.7425C5.00083 3.67917 6.67917 2 8.7425 2H12.5658V9.48417H12.565ZM8.7425 3.22583C7.355 3.22583 6.22667 4.355 6.22667 5.74167C6.22667 7.12833 7.355 8.25833 8.7425 8.25833H11.34V3.22583H8.7425ZM12.565 15.7417H8.7425C6.67917 15.7417 5.00083 14.0633 5.00083 12C5.00083 9.93667 6.67917 8.25833 8.7425 8.25833H12.5658V15.7417H12.565ZM8.7425 9.48417C7.355 9.48417 6.22667 10.6133 6.22667 12C6.22667 13.3867 7.35583 14.5158 8.7425 14.5158H11.34V9.48417H8.7425ZM8.7625 22C6.68833 22 5 20.3217 5 18.2583C5 16.195 6.67833 14.5167 8.74167 14.5167H12.565V18.2175C12.565 20.3033 10.8592 22 8.7625 22ZM8.7425 15.7417C8.07553 15.7425 7.43613 16.0079 6.96451 16.4795C6.49289 16.9511 6.22755 17.5905 6.22667 18.2575C6.22667 19.645 7.36417 20.7733 8.76333 20.7733C10.1842 20.7733 11.3408 19.6267 11.3408 18.2167V15.7417H8.7425ZM15.1625 15.7417H15.0808C13.0175 15.7417 11.3392 14.0633 11.3392 12C11.3392 9.93667 13.0175 8.25833 15.0808 8.25833H15.1625C17.2258 8.25833 18.9042 9.93667 18.9042 12C18.9042 14.0633 17.2258 15.7417 15.1625 15.7417ZM15.0817 9.48417C13.6942 9.48417 12.5658 10.6133 12.5658 12C12.5658 13.3867 13.695 14.5158 15.0817 14.5158H15.1633C16.5508 14.5158 17.6792 13.3867 17.6792 12C17.6792 10.6133 16.5492 9.48417 15.1625 9.48417H15.0817Z" />
+              </svg>
+            </Tooltip>{" "}
+            <Tooltip content="TailwindCSS" color="invert" placement="bottom">
+              <svg
+                className="fill-slate-900 dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clipPath="url(#clip0_2198_3297)">
+                  <path d="M12 6C9.33333 6 7.66667 7.33333 7 10C8 8.66667 9.16667 8.16667 10.5 8.5C11.2608 8.69 11.8042 9.24167 12.4067 9.85333C13.3875 10.8483 14.5217 12 17 12C19.6667 12 21.3333 10.6667 22 8C21 9.33333 19.8333 9.83333 18.5 9.5C17.7392 9.31 17.1958 8.75833 16.5933 8.14667C15.6133 7.15167 14.4792 6 12 6ZM7 12C4.33333 12 2.66667 13.3333 2 16C3 14.6667 4.16667 14.1667 5.5 14.5C6.26083 14.69 6.80417 15.2417 7.40667 15.8533C8.3875 16.8483 9.52167 18 12 18C14.6667 18 16.3333 16.6667 17 14C16 15.3333 14.8333 15.8333 13.5 15.5C12.7392 15.31 12.1958 14.7583 11.5933 14.1467C10.6133 13.1517 9.47917 12 7 12Z" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2198_3297">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
               </svg>
             </Tooltip>
             <Tooltip content="MongoDB" color="invert" placement="bottom">
@@ -179,18 +234,36 @@ export default function Home() {
       </div>
       <section id="project" className="min-h-screen py-10">
         <h1 className="text-center mb-5 font-bold">{`My Porfolio`}</h1>
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-          <div className="rounded-lg border hover:scale-105 duration-500 hover:cursor-pointer dark:bg-slate-700 bg-slate-200 w-full h-[200px] text-center "></div>
-          <div className="rounded-lg border hover:scale-105 duration-500 hover:cursor-pointer dark:bg-slate-700 bg-slate-200 w-full h-[200px] text-center "></div>
-          <div className="rounded-lg border hover:scale-105 duration-500 hover:cursor-pointer dark:bg-slate-700 bg-slate-200 w-full h-[200px] text-center "></div>
-          <div className="rounded-lg border hover:scale-105 duration-500 hover:cursor-pointer dark:bg-slate-700 bg-slate-200 w-full h-[200px] text-center "></div>
-          <div className="rounded-lg border hover:scale-105 duration-500 hover:cursor-pointer dark:bg-slate-700 bg-slate-200 w-full h-[200px] text-center "></div>
-          <div className="rounded-lg border hover:scale-105 duration-500 hover:cursor-pointer dark:bg-slate-700 bg-slate-200 w-full h-[200px] text-center "></div>
-          <div className="rounded-lg border hover:scale-105 duration-500 hover:cursor-pointer dark:bg-slate-700 bg-slate-200 w-full h-[200px] text-center "></div>
-          <div className="rounded-lg border hover:scale-105 duration-500 hover:cursor-pointer dark:bg-slate-700 bg-slate-200 w-full h-[200px] text-center "></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {portfolio.slice(0, 6).map((e, i) => {
+            return (
+              <>
+                <div
+                  key={i}
+                  className="rounded-lg border border-slate-950 dark:border-slate-50 border-dashed hover:scale-105 duration-500  dark:bg-slate-900 bg-slate-100 w-full h-auto text-center "
+                >
+                  <div className="text-left p-4">
+                    <h1 className="font-bold">{`Portfolio ${i + 1}`}</h1>
+                    <h1 className="text-sm text-justify mb-2">
+                      Ut sunt minim proident voluptate commodo aute enim minim
+                      eu consequat.
+                    </h1>
+                    <div className="border-slate-950 border dark:border-slate-50 border-dashed rounded-lg overflow-clip">
+                      <img
+                        className="object-cover aspect-video w-full"
+                        src={`https://picsum.photos/id/87${i}/900/1000?grayscale&blur=2`}
+                        alt="#"
+                      />
+                    </div>
+                    <h1 className="text-xs mt-2 underline underline-offset-4 decoration-dotted hover:cursor-pointer">{`See More >`}</h1>
+                  </div>
+                </div>
+              </>
+            );
+          })}
         </div>
-        <Link href={"/project"}>
-          <h1 className="text-center mt-5">{`Show All >`}</h1>
+        <Link href={"/portfolio"}>
+          <h1 className="text-center mt-5 text-sm underline underline-offset-4 decoration-dotted">{`Show All >`}</h1>
         </Link>
       </section>
     </Layout>

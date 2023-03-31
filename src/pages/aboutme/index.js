@@ -16,7 +16,7 @@ export default function About() {
       </Head>
       <div className="flex flex-col-reverse lg:flex-row w-full justify-between items-center">
         <div className="w-full lg:pr-16 text-justify">
-          <h1 className="lg:text-4xl underline  text-center rounded-lg text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100">
+          <h1 className="lg:text-4xl text-center text-3xl font-black dark:bg-clip-text dark:text-transparent text-white bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200 dark:box-decoration-slice dark:bg-gradient-to-r dark:from-slate-400 dark:via-orange-300 dark:to-yellow-200">
             Febriqgal Purnama, S.Kom
           </h1>
           <br />
@@ -36,7 +36,6 @@ export default function About() {
             voluptate. Pariatur fugiat consequat cillum sunt sunt. Esse occaecat
             ipsum in do ut dolor nulla est eiusmod aute sint.
           </h1>
-       
         </div>
         <br />
         <div className="h-[460px] aspect-square overflow-hidden rounded-lg border">
