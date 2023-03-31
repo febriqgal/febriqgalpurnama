@@ -17,7 +17,7 @@ export default function About() {
       </Head>
       <div className="flex flex-col-reverse lg:flex-row w-full justify-between items-center">
         <div className="w-full lg:pr-16 text-justify">
-          <h1 className="lg:text-4xl text-center text-3xl font-black bg-clip-text text-transparent text-white bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200 box-decoration-slice ">
+          <h1 className="lg:text-4xl text-center text-3xl font-black bg-clip-text text-transparent box-decoration-slice bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200">
             Febriqgal Purnama, S.Kom
           </h1>
 
