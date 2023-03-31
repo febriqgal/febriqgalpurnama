@@ -34,7 +34,7 @@ export default function Portfolio() {
   ];
   return (
     <Layout>
-      <section id="project" className="min-h-screen">
+      <section id="project">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {portfolio.map((e, i) => {
             return (

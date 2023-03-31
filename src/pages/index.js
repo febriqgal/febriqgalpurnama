@@ -231,7 +231,7 @@ export default function Home() {
           </div>
         </a>
       </div>
-      <section id="project" className="min-h-screen py-10">
+      <section id="project" className="min-h-screen pt-10">
         <h1 className="text-center mb-5 font-bold">{`My Porfolio`}</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {portfolio.slice(0, 6).map((e, i) => {
