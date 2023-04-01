@@ -2,65 +2,74 @@ import Layout from "@/components/layout";
 import Image from "next/image";
 import React from "react";
 import Gambar1 from "../../../public/gambar1.jpg";
-import { Tooltip } from "@nextui-org/react";
-import Styles from "../../styles/Home.module.css";
-import Head from "next/head";
+import { motion } from "framer-motion";
 export default function About() {
   return (
     <Layout titlee={"About Me - "}>
-      <div className="flex flex-col-reverse lg:flex-row w-full justify-between items-center">
-        <div className="w-full lg:pr-16 text-justify">
-          <h1 className="lg:text-4xl text-center text-3xl font-black bg-clip-text text-transparent box-decoration-slice bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200">
-            Febriqgal Purnama, S.Kom
-          </h1>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
+        <div className="flex flex-col-reverse lg:flex-row w-full justify-between items-center">
+          <div className="w-full lg:pr-16 text-justify">
+            <h1 className="lg:text-4xl text-center text-3xl font-black bg-clip-text text-transparent box-decoration-slice bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200">
+              Febriqgal Purnama, S.Kom
+            </h1>
 
-          <br />
+            <br />
 
-          <h1>
-            Hello! I&apos;m Febriqgal. I graduated from a private university in
-            Padang city in 2023, I started studying programming in May 2020,
-            when the pandemic started. There wasn&apos;t much for me to do at
-            the time, so I decided to teach myself programming on YouTube, then
-            started watching a lot of YouTube videos to learn more about
-            programming, specifically{" "}
-            <span className="underline-offset-4 underline decoration-dotted">
-              Web Development
-            </span>
-            , and{" "}
-            <span className="underline-offset-4 underline decoration-dotted">
-              {" "}
-              Mobile Development
-            </span>
-            .
+            <h1>
+              Hello! I&apos;m Febriqgal. I graduated from a private university
+              in Padang city in 2023, I started studying programming in May
+              2020, when the pandemic started. There wasn&apos;t much for me to
+              do at the time, so I decided to teach myself programming on
+              YouTube, then started watching a lot of YouTube videos to learn
+              more about programming, specifically{" "}
+              <span className="underline-offset-4 underline decoration-dotted">
+                Web Development
+              </span>
+              , and{" "}
+              <span className="underline-offset-4 underline decoration-dotted">
+                {" "}
+                Mobile Development
+              </span>
+              .
+              <br />
+              <br />
+              There is a lot of stuff and technology to learn in programming and
+              I am motivated to learn as much as I can. I enjoy learning
+              something new and getting feedback to improve and grow.
+            </h1>
             <br />
+            <h1>
+              On this website, I will write to showcase my portfolio. I believe
+              that writing down what I&apos;ve learned is the best way to build
+              a{" "}
+              <span className="underline-offset-4 underline decoration-dotted">
+                Personal Branding
+              </span>
+            </h1>
             <br />
-            There is a lot of stuff and technology to learn in programming and I
-            am motivated to learn as much as I can. I enjoy learning something
-            new and getting feedback to improve and grow.
-          </h1>
+            <q className="italic text-xs">
+              {`Apa yang kita tanam, itu yang akan kita tuai.`}
+            </q>
+          </div>
           <br />
-          <h1>
-            On this website, I will write to showcase my portfolio. I believe
-            that writing down what I&apos;ve learned is the best way to build a{" "}
-            <span className="underline-offset-4 underline decoration-dotted">
-              Personal Branding
-            </span>
-          </h1>
-          <br />
-          <q className="italic text-xs">
-            {`Apa yang kita tanam, itu yang akan kita tuai.`}
-          </q>
+          <div className="h-[460px] aspect-square overflow-hidden rounded-lg border">
+            <Image
+              placeholder="blur"
+              className="scale-[2.5] hover:scale-[2.9] duration-500 transition-transform translate-x-3"
+              src={Gambar1}
+              alt={"Febriqgal"}
+            />
+          </div>
         </div>
-        <br />
-        <div className="h-[460px] aspect-square overflow-hidden rounded-lg border">
-          <Image
-            placeholder="blur"
-            className="scale-[2.5] hover:scale-[2.9] duration-500 transition-transform translate-x-3"
-            src={Gambar1}
-            alt={"Febriqgal"}
-          />
-        </div>
-      </div>
+      </motion.div>
     </Layout>
   );
 }
