@@ -11,6 +11,7 @@
   "dependencies": {
     "@nextui-org/react": "^1.0.0-beta.12",
     "animate.css": "^4.1.1",
+    "clsx": "^1.2.1",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "framer-motion": "^10.10.0",
@@ -19,7 +20,8 @@
     "nextjs-progressbar": "^0.0.16",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-type-animation": "^3.0.1"
+    "react-type-animation": "^3.0.1",
+    "sharp": "^0.32.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

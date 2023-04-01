@@ -33,7 +33,7 @@ export default function Portfolio() {
     { title: "", img: "" },
   ];
   return (
-    <Layout>
+    <Layout titlee={"Portfolio - "}>
       <section id="project">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {portfolio.map((e, i) => {

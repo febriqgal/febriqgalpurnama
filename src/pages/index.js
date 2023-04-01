@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { TypeAnimation } from "react-type-animation";
 import Gambar from "../../public/20.png";
-
+import clsx from "clsx";
 export default function Home() {
   const { setVisible, bindings } = useModal();
   const portfolio = [
@@ -53,10 +53,22 @@ export default function Home() {
           </Button>
         </Modal.Footer>
       </Modal>
-      <div className="flex flex-col sm:flex-row w-full items-center justify-between">
+
+      <div
+        className={clsx(
+          "flex flex-col items-center justify-between",
+          "w-full",
+          "sm:flex-row"
+        )}
+      >
         <div>
           <h1 className="text-lg font-medium">{`Hi!👋 I'm`}</h1>
-          <h1 className="text-5xl font-black bg-clip-text text-transparent box-decoration-slice bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200">
+          <h1
+            className={clsx(
+              "text-5xl font-black bg-clip-text text-transparent box-decoration-slice",
+              "bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200"
+            )}
+          >
             Febriqgal Purnama
           </h1>
           <TypeAnimation
@@ -233,12 +245,23 @@ export default function Home() {
       </div>
       <section id="project" className="min-h-screen pt-10">
         <h1 className="text-center mb-5 font-bold">{`My Porfolio`}</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div
+          className={clsx(
+            "grid grid-cols-1 gap-4",
+            "sm:grid-cols-2",
+            "lg:grid-cols-3",
+            ""
+          )}
+        >
           {portfolio.slice(0, 6).map((e, i) => {
             return (
               <div
                 key={i}
-                className="rounded-lg border border-slate-950 dark:border-slate-50 border-dashed hover:scale-105 duration-500  dark:bg-slate-900 bg-slate-100 w-full h-auto text-center "
+                className={clsx(
+                  "rounded-lg border border-slate-950  border-dashed  duration-500 bg-slate-100 w-full h-auto text-center",
+                  "dark:border-slate-50 dark:bg-slate-900",
+                  "hover:scale-105"
+                )}
               >
                 <div className="text-left p-4">
                   <h1 className="font-bold">{`Portfolio ${i + 1}`}</h1>

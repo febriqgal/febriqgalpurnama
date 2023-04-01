@@ -9,6 +9,7 @@ export default function NavC() {
 
   const navigation = [
     { title: "Home", href: "/" },
+    { title: "Blog", href: "/blog" },
     { title: "Portfolio", href: "/portfolio" },
     { title: "About Me", href: "/aboutme" },
   ];
