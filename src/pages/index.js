@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { TypeAnimation } from "react-type-animation";
 import Gambar from "../../public/20.png";
 import clsx from "clsx";
+import bg from "../../public/bg.svg";
 export default function Home() {
   const { setVisible, bindings } = useModal();
   const portfolio = [
@@ -53,7 +54,11 @@ export default function Home() {
           </Button>
         </Modal.Footer>
       </Modal>
-
+      <Image
+        className="absolute -z-50 top-0 left-0 min-h-screen"
+        src={bg}
+        alt="#"
+      />
       <div
         className={clsx(
           "flex flex-col items-center justify-between",
@@ -63,14 +68,7 @@ export default function Home() {
       >
         <div>
           <h1 className="text-lg font-medium">{`Hi!👋 I'm`}</h1>
-          <h1
-            className={clsx(
-              "text-5xl font-black bg-clip-text text-transparent box-decoration-slice",
-              "bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200"
-            )}
-          >
-            Febriqgal Purnama
-          </h1>
+          <h1 className={clsx("text-5xl font-black")}>Febriqgal Purnama</h1>
           <TypeAnimation
             sequence={[
               "Software Engineer |",

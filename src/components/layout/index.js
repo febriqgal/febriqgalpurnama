@@ -6,7 +6,8 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import "animate.css";
 import { Fira_Code } from "next/font/google";
 import localFont from "next/font/local";
-
+import Image from "next/image";
+import bg from "../../../public/bg.svg";
 const fira = Fira_Code({
   subsets: [
     "cyrillic",
@@ -60,6 +61,7 @@ export default function Layout({ children, titlee }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
       </Head>
+
       <NavC />
       {backgroundTransparacyVar > 0.5 ? (
         <div
@@ -93,17 +95,9 @@ export default function Layout({ children, titlee }) {
         className="progress-bar bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200 bottom-0 h-1 z-[99999] rounded-full fixed left-0 right-0 origin-top"
         style={{ scaleX }}
       />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.5,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
-      >
-        <main className=" px-5 lg:px-36 min-h-screen">{children}</main>
-      </motion.div>
+
+      <main className=" px-5 lg:px-36 min-h-screen">{children}</main>
+
       <FooterC />
     </div>
   );
