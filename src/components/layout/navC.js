@@ -2,16 +2,16 @@ import { Switch } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { MoonIcon } from "../moonicon";
-import { SunIcon } from "../sunicon";
+import { MoonIcon } from "../icon/moonicon";
+import { SunIcon } from "../icon/sunicon";
 export default function NavC() {
   const { systemTheme, theme, setTheme } = useTheme();
 
   const navigation = [
     { title: "Home", href: "/" },
-    { title: "Blog", href: "/blog" },
+    { title: "Project", href: "/project" },
     { title: "Portfolio", href: "/portfolio" },
-    { title: "About Me", href: "/aboutme" },
+    { title: "About", href: "/aboutme" },
   ];
   const route = useRouter();
   return (
@@ -25,8 +25,8 @@ export default function NavC() {
                 key={i}
                 className={
                   route.pathname != e.href
-                    ? `hover:border-[#F1CCD6] duration-1000 transition-all hover:underline decoration-wavy underline-offset-[5px] decoration-slate-950 hover:dark:decoration-yellow-200 `
-                    : `border-[#F1CCD6] duration-1000 underline decoration-wavy underline-offset-[5px] decoration-slate-950 transition-all dark:decoration-yellow-200 dark:decoration-wavy dark:underline-offset-[5px]`
+                    ? `hover:border-[#F1CCD6] duration-1000 transition-all hover:underline decoration-dotted underline-offset-[8px] decoration-slate-950 hover:dark:decoration-yellow-200`
+                    : `border-[#F1CCD6] duration-1000 underline decoration-dotted underline-offset-[8px] decoration-slate-950 transition-all dark:decoration-yellow-200 dark:decoration-dotted dark:underline-offset-[8px]`
                 }
                 href={e.href}
               >
