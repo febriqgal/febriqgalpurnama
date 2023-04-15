@@ -83,13 +83,13 @@ export default function Home() {
       >
         <div
           className={clsx(
-            "flex flex-col items-center justify-between",
+            "flex flex-col items-center justify-center gap-40",
             "w-full",
             "sm:flex-row"
           )}
         >
           <div>
-            <h1 className="text-lg font-medium">{`Hi!👋 I'm`}</h1>
+            <h1 className="text-lg font-medium">{`Hi,👋 I'm`}</h1>
             <h1 className={clsx("text-5xl font-black")}>Febriqgal Purnama</h1>
             <TypeAnimation
               sequence={[
