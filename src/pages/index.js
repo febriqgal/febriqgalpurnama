@@ -93,11 +93,9 @@ export default function Home() {
             <h1 className={clsx("text-5xl font-black")}>Febriqgal Purnama</h1>
             <TypeAnimation
               sequence={[
-                "Software Engineer |",
+                "Web App Developers",
                 1000,
-                "Software Engineer | Web App Developers",
-                1000,
-                "Software Engineer | Mobile App Developers",
+                "Mobile App Developers",
                 1000,
               ]}
               speed={50}
