@@ -224,7 +224,7 @@ export default function Home() {
                 target={"_blank"}
                 onPress={() => {
                   route.push(
-                    "https://drive.google.com/file/d/12R1wc5R_HimifAytYjDLoZ2OLvAqEbMH/view?usp=share_link"
+                    "https://drive.google.com/file/d/12ZBFlxnnlX02AeTisHrPwAEPF0Qr7cGf/view?usp=share_link"
                   );
                 }}
                 color={"gradient"}
