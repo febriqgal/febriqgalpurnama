@@ -39,7 +39,7 @@ export default function HeaderC() {
               "https://drive.google.com/file/d/12ZBFlxnnlX02AeTisHrPwAEPF0Qr7cGf/view?usp=share_link"
             }
           >
-            Resume
+            Download CV Me
           </Link>
         </div>
       </div>
