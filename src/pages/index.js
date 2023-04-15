@@ -83,7 +83,7 @@ export default function Home() {
       >
         <div
           className={clsx(
-            "flex flex-col items-center justify-center gap-40",
+            "flex flex-col items-center justify-center gap-0 lg:gap-40",
             "w-full",
             "sm:flex-row"
           )}
