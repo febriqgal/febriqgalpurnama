@@ -81,8 +81,7 @@ export default function Certification() {
       title: "Dasar-dasar Mobile Programming Android dan Kotlin untuk Pemula",
       date: "Aug 2021",
       img: Certi9,
-      credentials:
-        "https://buildwithangga.com/talent/febriqgalp/full-stack-golang-vue-nuxtjs-website-crowdfunding",
+      credentials: "https://skillacademy.com/sertifikat/2MK42Q9J9I0M9Q",
       publisher: "Skill Academy",
     },
   ];
