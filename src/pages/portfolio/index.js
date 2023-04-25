@@ -26,7 +26,10 @@ export default function Portfolio() {
   const snapshot = useRef(null);
   const [isLoading, setIsloading] = useState(true);
   const getDBFromFirestore = async () => {
-    const querySnapshot = query(collection(db, "portfolio"));
+    const querySnapshot = query(
+      collection(db, "portfolio"),
+      orderBy("tanggal", "desc")
+    );
     const gettt = await getDocs(querySnapshot);
     snapshot.current = gettt.docs;
     setTimeout(() => {
@@ -61,12 +64,14 @@ export default function Portfolio() {
                   >
                     <div className="text-left p-4">
                       <h1 className="font-bold">{Data.title}</h1>
+                      <h1 className="font-bold">{Data.tanggal}</h1>
                       <h1 className="text-sm text-justify mb-2">
                         Ut sunt minim proident voluptate commodo aute enim minim
                         eu consequat.
                       </h1>
                       <div className="border-slate-950 border dark:border-slate-50 border-dashed rounded-lg overflow-clip">
                         <img
+                          loading="lazy"
                           onClick={() => {
                             route.push(`/portfolio/${e.id}`);
                           }}

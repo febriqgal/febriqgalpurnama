@@ -36,9 +36,18 @@ export default function PortfolioDetail() {
     );
   } else {
     const post = snapshot.current;
+
     return (
       <Layout>
-        <img alt="#" src={post.thumbnail} />
+        <div className="grid grid-cols-2 gap-4">
+          {post.content.map((e, i) => {
+            return (
+              <div key={i} className="rounded-xl overflow-clip">
+                <img alt="#" src={`${e === "" ? null : e}`} />
+              </div>
+            );
+          })}
+        </div>
       </Layout>
     );
   }
