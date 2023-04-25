@@ -7,6 +7,7 @@ import PortfolioC from "@/components/portfolioC";
 import ProjectC from "@/components/projectC";
 import Image from "next/image";
 import bg from "../../public/bg.svg";
+import CertificationC from "@/components/certificationC";
 export default function Home() {
   return (
     <Layout>
@@ -17,7 +18,7 @@ export default function Home() {
       />
       <HeaderC />
       <ButtonDownC />
-      <ProjectC />
+      <CertificationC />
       <PortfolioC />
     </Layout>
   );
