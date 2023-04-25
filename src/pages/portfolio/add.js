@@ -1,20 +1,23 @@
+import { FirebaseStorage, db } from "@/server/db";
 import dayjs from "dayjs";
 import "dayjs/locale/id";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { getAuth } from "firebase/auth";
 import { addDoc, collection } from "firebase/firestore";
-import { getStorage, ref, uploadBytes } from "firebase/storage";
-import Image from "next/image";
-import React, { useState } from "react";
+import { ref, uploadString } from "firebase/storage";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { toast, Toaster } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 import { v4 as uuidv4 } from "uuid";
-
-import { db } from "@/server/db";
 export default function Admin() {
   dayjs.locale("id");
   dayjs.extend(relativeTime);
+  const uid = uuidv4();
+  const [imgsSrc, setImgsSrc] = useState([]);
   const { register, handleSubmit, control, reset } = useForm();
+  const storageRef = ref(FirebaseStorage, `/berita/${uid}`);
+  const metadata = {
+    contentType: "image/jpeg",
+  };
 
   const addDatafromDBFirestore = async (data) => {
     const push = async () => {
@@ -23,6 +26,7 @@ export default function Admin() {
         isi: data.isi,
         thumbnail: data.gambar1,
         content: [data.gambar1, data.gambar2],
+        content1: [...imgsSrc],
         tanggal_berita: dayjs().format("ddd, MMM D, YYYY HH:mm"),
         tanggal: dayjs().format(),
         dilihat: 0,
@@ -35,6 +39,7 @@ export default function Admin() {
       error: <b>Terjadi kesalahan, silahkan coba lagi.</b>,
     });
   };
+
   return (
     <>
       <div className="flex p-4 place-items-center gap-2"></div>
