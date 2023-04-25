@@ -4,10 +4,12 @@ import Link from "next/link";
 import Certi1 from "../../public/Pemrograman-Go-Lang-Pemula-sampai-Mahir.jpg";
 import Certi2 from "../../public/sertifikat_course_251_1937807_271121142617_2_1.jpg";
 import Certi3 from "../../public/CERTIFICATE_LANDING_PAGE~WGSRVHWV6R7G.jpeg";
+import { useRouter } from "next/router";
 export default function CertificationC() {
+  const route = useRouter();
   const certification = [
     {
-      title: "Pemrograman Go-Lang : Pemula sampai Mahir",
+      title: "Pemrograman Go-Lang: Pemula sampai Mahir",
       date: "Apr 2023",
       img: Certi1,
       credentials:
@@ -30,6 +32,7 @@ export default function CertificationC() {
       publisher: "Google",
     },
   ];
+
   return (
     <>
       <div className="flex items-center justify-between  mb-5">
@@ -44,26 +47,22 @@ export default function CertificationC() {
           return (
             <div
               key={i}
-              className="rounded-lg border border-slate-950 dark:border-slate-50 border-dashed hover:scale-105 duration-500  dark:bg-slate-900 bg-slate-100 w-full h-auto text-center "
+              className="rounded-lg border border-slate-950 dark:border-slate-50 border-dashed hover:scale-105 duration-500  dark:bg-slate-900 bg-slate-100 w-full h-auto text-start p-4"
             >
-              <div className="text-left p-4">
-                <h1 className="font-bold">{e.title}</h1>
-                <h1 className="text-xs mb-4">{`${e.date} - ${e.publisher}`}</h1>
-                <div className="border-slate-950 border dark:border-slate-50 border-dashed rounded-lg overflow-clip">
-                  <Image
-                    className="object-cover aspect-video w-full"
-                    src={e.img}
-                    alt="#"
-                  />
-                </div>
-                <div className="flex items-center justify-between">
-                  <Link
-                    target="_blank"
-                    href={`${e.credentials}`}
-                    className="text-sm mt-4 underline underline-offset-4 decoration-dotted hover:cursor-pointer"
-                  >{`Credentials >`}</Link>
-                </div>
+              <h1 className="font-bold">{`${e.title}`}</h1>
+              <h1 className="text-xs mb-4">{`${e.date} - ${e.publisher}`}</h1>
+
+              <div className="border-slate-950 border dark:border-slate-50 border-dashed rounded-lg overflow-clip">
+                <Image
+                  onClick={() => {
+                    route.push(`${e.credentials}`);
+                  }}
+                  className="object-cover aspect-video w-full"
+                  src={e.img}
+                  alt="#"
+                />
               </div>
+              <div className="flex items-center justify-between"></div>
             </div>
           );
         })}
