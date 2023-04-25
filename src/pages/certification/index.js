@@ -10,14 +10,14 @@ import Certi6 from "../../../public/bwa-certificate-learn-flutter-figma-ui-anima
 import Certi7 from "../../../public/bwa-certificate-dart-flutter-development-bootcamp-find-house-app-febriqgal-purnama.jpg";
 import Certi8 from "../../../public/bwa-certificate-full-stack-golang-vue-nuxtjs-website-crowdfunding-febriqgal-purnama.jpg";
 import Certi9 from "../../../public/CERT-MWEH6C6J.jpg";
-
+import Styles from "../../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Certification() {
   const certification = [
     {
-      title: "Pemrograman Go-Lang : Pemula sampai Mahir",
+      title: "Pemrograman Go-Lang: Pemula sampai Mahir",
       date: "Apr 2023",
       img: Certi1,
       credentials:
@@ -92,25 +92,26 @@ export default function Certification() {
           return (
             <div
               key={i}
-              className="rounded-lg border border-slate-950 dark:border-slate-50 border-dashed hover:scale-105 duration-500  dark:bg-slate-900 bg-slate-100 w-full h-auto text-center "
+              className="text-start  p-4 rounded-lg border border-slate-950 dark:border-slate-50 border-dashed hover:scale-105 duration-500  dark:bg-slate-900 bg-slate-100 w-full"
             >
-              <div className="text-left p-4">
-                <h1 className="font-bold">{e.title}</h1>
-                <h1 className="text-xs mb-4">{`${e.date} - ${e.publisher}`}</h1>
-                <div className="border-slate-950 border dark:border-slate-50 border-dashed rounded-lg overflow-clip">
-                  <Image
-                    className="object-cover aspect-video w-full"
-                    src={e.img}
-                    alt="#"
-                  />
-                </div>
-                <div className="flex items-center justify-between">
-                  <Link
-                    target="_blank"
-                    href={`${e.credentials}`}
-                    className="text-sm mt-4 underline underline-offset-4 decoration-dotted hover:cursor-pointer"
-                  >{`Credentials >`}</Link>
-                </div>
+              <h1
+                title={e.title}
+                className={`${Styles.truncate1} font-bold`}
+              >{`${e.title}`}</h1>
+              <h1 className="text-xs mb-4">{`${e.date} - ${e.publisher}`}</h1>
+              <div className="border-slate-950 border dark:border-slate-50 border-dashed rounded-lg overflow-clip">
+                <Image
+                  className="object-cover aspect-video w-full"
+                  src={e.img}
+                  alt="#"
+                />
+              </div>
+              <div className="flex items-center justify-between">
+                <Link
+                  target="_blank"
+                  href={`${e.credentials}`}
+                  className="text-sm mt-4 m-auto underline underline-offset-4 decoration-dotted hover:cursor-pointer"
+                >{`Credentials >`}</Link>
               </div>
             </div>
           );

@@ -5,6 +5,7 @@ import Certi1 from "../../public/Pemrograman-Go-Lang-Pemula-sampai-Mahir.jpg";
 import Certi2 from "../../public/sertifikat_course_251_1937807_271121142617_2_1.jpg";
 import Certi3 from "../../public/CERTIFICATE_LANDING_PAGE~WGSRVHWV6R7G.jpeg";
 import { useRouter } from "next/router";
+import Styles from "../styles/Home.module.css";
 export default function CertificationC() {
   const route = useRouter();
   const certification = [
@@ -47,9 +48,12 @@ export default function CertificationC() {
           return (
             <div
               key={i}
-              className="rounded-lg border border-slate-950 dark:border-slate-50 border-dashed hover:scale-105 duration-500  dark:bg-slate-900 bg-slate-100 w-full h-auto text-start p-4"
+              className="rounded-lg border border-slate-950 dark:border-slate-50 border-dashed hover:scale-105 duration-500  dark:bg-slate-900 bg-slate-100 w-full flex justify-between flex-col p-4"
             >
-              <h1 className="font-bold">{`${e.title}`}</h1>
+              <h1
+                title={e.title}
+                className={`${Styles.truncate1} font-bold`}
+              >{`${e.title}`}</h1>
               <h1 className="text-xs mb-4">{`${e.date} - ${e.publisher}`}</h1>
 
               <div className="border-slate-950 border dark:border-slate-50 border-dashed rounded-lg overflow-clip">
@@ -57,7 +61,7 @@ export default function CertificationC() {
                   onClick={() => {
                     route.push(`${e.credentials}`);
                   }}
-                  className="object-cover aspect-video w-full"
+                  className="object-cover aspect-video w-full hover:cursor-pointer"
                   src={e.img}
                   alt="#"
                 />

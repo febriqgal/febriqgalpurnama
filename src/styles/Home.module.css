@@ -6,7 +6,14 @@
   padding: 6rem;
   min-height: 100vh;
 }
-
+.truncate1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
 .description {
   display: inherit;
   justify-content: inherit;
