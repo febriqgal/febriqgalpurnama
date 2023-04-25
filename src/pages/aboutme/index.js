@@ -6,15 +6,7 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <Layout titlee={"About Me - "}>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.5,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
-      >
+      
         <div className="flex flex-col-reverse lg:flex-row w-full justify-between items-center">
           <div className="w-full lg:pr-16 text-justify">
             <h1 className="lg:text-4xl text-center text-3xl font-black bg-clip-text text-transparent box-decoration-slice bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200">
@@ -69,7 +61,7 @@ export default function About() {
             />
           </div>
         </div>
-      </motion.div>
+       
     </Layout>
   );
 }

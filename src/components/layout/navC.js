@@ -11,6 +11,7 @@ export default function NavC() {
     { title: "Home", href: "/" },
     { title: "Project", href: "/project" },
     { title: "Portfolio", href: "/portfolio" },
+    { title: "Certification", href: "/certification" },
     { title: "About", href: "/aboutme" },
   ];
   const route = useRouter();
