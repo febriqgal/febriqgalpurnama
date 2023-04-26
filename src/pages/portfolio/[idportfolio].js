@@ -10,6 +10,7 @@ import { db } from "@/server/db";
 import { useEffect, useRef, useState } from "react";
 import styles from "../../styles/Home.module.css";
 import { deleteDoc, doc, getDoc } from "firebase/firestore";
+import clsx from "clsx";
 export default function PortfolioDetail() {
   const [isLoading, setIsloading] = useState(true);
   const route = useRouter();
@@ -39,11 +40,11 @@ export default function PortfolioDetail() {
 
     return (
       <Layout>
-        <div className="grid grid-cols-2 gap-4">
+        <div className={clsx("grid lg:grid-cols-2 gap-4")}>
           {post.content.map((e, i) => {
             return (
               <div key={i} className="rounded-xl overflow-clip">
-                <img alt="#" src={`${e === "" ? null : e}`} />
+                <img className="w-full" alt="#" src={`${e}`} />
               </div>
             );
           })}
