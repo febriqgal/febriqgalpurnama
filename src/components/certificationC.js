@@ -35,8 +35,8 @@ export default function CertificationC() {
   ];
 
   return (
-    <>
-      <div className="flex items-center justify-between  mb-5">
+    <section id="#certification">
+      <div className="flex items-center justify-between mt-10 mb-5">
         <h1 className="text-center font-bold">{`My Certification`}</h1>
         <Link
           href={"/certification"}
@@ -71,6 +71,6 @@ export default function CertificationC() {
           );
         })}
       </div>
-    </>
+    </section>
   );
 }
