@@ -6,7 +6,8 @@ export default function FooterC() {
   const route = useRouter();
   return (
     <footer className="dark:bg-slate-950 bg-slate-100 rounded-t-3xl mt-10  border-t border-dotted border-slate-950 dark:border-slate-50">
-      <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8 text-center">
+        {/* <h1 className="mb-6">Febirgwqasd</h1> */}
         <div className="flex justify-center space-x-6">
           {/* ig */}
           <Link
