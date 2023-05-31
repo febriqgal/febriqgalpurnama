@@ -52,8 +52,8 @@ export default function Portfolio() {
     const data = Object.values(post);
     return (
       <Layout titlee={"Portfolio - "}>
-        <section id="project">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="flex justify-center items-start min-h-screen">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {data.map((e, i) => {
               const Data = e.data();
               return (
@@ -85,8 +85,9 @@ export default function Portfolio() {
                 </>
               );
             })}
-          </div>
-        </section>
+          </div> */}
+          <h1>Coming Soon!</h1>
+        </div>
       </Layout>
     );
   }
