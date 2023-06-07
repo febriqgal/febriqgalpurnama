@@ -10,7 +10,7 @@ export default function HeaderC() {
     <div
       className={clsx(
         "flex flex-col items-center justify-center gap-0 lg:gap-40",
-        "w-full pb-10",
+        "w-full pb-10 mt-4 sm:mt-0",
         "sm:flex-row"
       )}
     >
