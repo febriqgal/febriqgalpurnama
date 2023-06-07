@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
     <>
       <NextNProgress
         height={3}
-        color="#D5A06C"
+        color="#0A4D68"
         options={{ showSpinner: false }}
       />
       <ThemeProvider attribute="class">

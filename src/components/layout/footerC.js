@@ -16,7 +16,7 @@ export default function FooterC() {
             href={"https://www.instagram.com/febriqgal_/"}
           >
             <svg
-              className=" dark:fill-slate-50 fill-slate-900  hover:-translate-y-2 duration-700 h-6"
+              className=" dark:fill-slate-50 fill-[#0A4D68]  hover:-translate-y-2 duration-700 h-6"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ export default function FooterC() {
             href={"https://www.linkedin.com/in/febriqgal/"}
           >
             <svg
-              className=" dark:fill-slate-50 fill-slate-900  hover:-translate-y-2 duration-700 h-6"
+              className=" dark:fill-slate-50 fill-[#0A4D68]  hover:-translate-y-2 duration-700 h-6"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ export default function FooterC() {
             href={"https://twitter.com/febriqgal_"}
           >
             <svg
-              className=" dark:fill-slate-50 fill-slate-900  hover:-translate-y-2 duration-700 h-6"
+              className=" dark:fill-slate-50 fill-[#0A4D68]  hover:-translate-y-2 duration-700 h-6"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ export default function FooterC() {
             href={"https://github.com/febriqgal"}
           >
             <svg
-              className=" dark:fill-slate-50 fill-slate-900  hover:-translate-y-2 duration-700 h-6"
+              className=" dark:fill-slate-50 fill-[#0A4D68]  hover:-translate-y-2 duration-700 h-6"
               width="24"
               height="24"
               viewBox="0 0 24 24"

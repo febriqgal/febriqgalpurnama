@@ -36,8 +36,8 @@ export default function NavC() {
                 key={i}
                 className={
                   route.pathname != e.href
-                    ? `hover:border-[#F1CCD6] duration-1000 transition-all hover:underline decoration-dotted underline-offset-[8px] decoration-slate-950 hover:dark:decoration-yellow-200`
-                    : `border-[#F1CCD6] duration-1000 underline decoration-dotted underline-offset-[8px] decoration-slate-950 transition-all dark:decoration-yellow-200 dark:decoration-dotted dark:underline-offset-[8px]`
+                    ? `hover:border-[#F1CCD6] duration-1000 transition-all hover:underline decoration-dotted underline-offset-[8px] decoration-[#0A4D68] hover:dark:decoration-yellow-200`
+                    : `border-[#F1CCD6] duration-1000 underline decoration-dotted underline-offset-[8px] decoration-[#0A4D68] transition-all dark:decoration-yellow-200 dark:decoration-dotted dark:underline-offset-[8px]`
                 }
                 href={e.href}
               >
@@ -58,7 +58,7 @@ export default function NavC() {
           }}
           checked={theme != "light" ? true : false}
           size="sm"
-          color={"warning"}
+          css={{ color: "#0A4D68" }}
           iconOn={<MoonIcon filled />}
           iconOff={<SunIcon filled />}
         />
