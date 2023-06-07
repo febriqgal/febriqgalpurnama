@@ -17,7 +17,7 @@ export default function Blog() {
     { title: "", img: "" },
   ];
   return (
-    <Layout titlee={"Blog - "}>
+    <Layout titlee={"Project - "}>
       <h1 className="text-center">Coming Soon!</h1>
     </Layout>
   );

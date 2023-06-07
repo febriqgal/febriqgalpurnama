@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { MoonIcon } from "../icon/moonicon";
 import { SunIcon } from "../icon/sunicon";
 import Image from "next/image";
-import Logo from "../../../public/logo transparant.png";
+import Logo from "../../../public/logo.svg";
 export default function NavC() {
   const { systemTheme, theme, setTheme } = useTheme();
 
@@ -23,8 +23,9 @@ export default function NavC() {
         <div className="flex items-center lg:justify-center gap-4 place-items-center font-bold flex-wrap">
           <Link href={'/'}>
             <Image
+              className="translate-y-2"
               title="Beranda Febriqgal Purnama, S.Kom."
-              width={60}
+              width={50}
               src={Logo}
               alt="FP"
             />

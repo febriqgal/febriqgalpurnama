@@ -86,7 +86,7 @@ export default function Certification() {
     },
   ];
   return (
-    <Layout>
+    <Layout titlee={'Certification - '}>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {certification.map((e, i) => {
           return (
