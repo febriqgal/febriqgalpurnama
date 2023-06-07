@@ -15,7 +15,7 @@ export default function HeaderC() {
       )}
     >
       <div>
-        <h1 className="text-lg font-medium">{`Hello Everyone,👋 I'm`}</h1>
+        <h1 className="text-lg font-medium">{`Hello Everyone👋, I'm`}</h1>
         <h1 className={clsx("text-5xl font-black")}>Febriqgal Purnama</h1>
         <div className="flex gap-2">
           <h1>{"a "}</h1>
@@ -42,7 +42,7 @@ export default function HeaderC() {
 
           <Link
             target="_blank"
-            className="px-4 py-2 bg-slate-950 rounded-md text-slate-50 outline-none shadow-lg transform active:scale-75 transition-transform"
+            className="px-4 py-2 bg-[#0A4D68] rounded-md text-slate-50 outline-none shadow-lg transform active:scale-75 transition-transform"
             href={
               "https://drive.google.com/file/d/12ZBFlxnnlX02AeTisHrPwAEPF0Qr7cGf/view?usp=share_link"
             }

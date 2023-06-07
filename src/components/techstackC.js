@@ -5,7 +5,7 @@ export default function TechstackC() {
     <div className="grid grid-cols-7 lg:flex  gap-2 lg:gap-4 place-items-center mt-4">
       <Tooltip content="NextJS" color="invert" placement="bottom">
         <svg
-          className="fill-slate-900 dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
+          className="fill-[#0A4D68] dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,7 @@ export default function TechstackC() {
       </Tooltip>
       <Tooltip content="Git" color="invert" placement="bottom">
         <svg
-          className="fill-slate-900 dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
+          className="fill-[#0A4D68] dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +25,7 @@ export default function TechstackC() {
       </Tooltip>
       <Tooltip content="Flutter" color="invert" placement="bottom">
         <svg
-          className="fill-slate-900 dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
+          className="fill-[#0A4D68] dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ export default function TechstackC() {
       </Tooltip>
       <Tooltip content="Firebase" color="invert" placement="bottom">
         <svg
-          className="fill-slate-900 dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
+          className="fill-[#0A4D68] dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ export default function TechstackC() {
       </Tooltip>
       <Tooltip content="NodeJS" color="invert" placement="bottom">
         <svg
-          className="fill-slate-900 dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
+          className="fill-[#0A4D68] dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ export default function TechstackC() {
       </Tooltip>
       <Tooltip content="Figma" color="invert" placement="bottom">
         <svg
-          className="fill-slate-900 dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
+          className="fill-[#0A4D68] dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@ export default function TechstackC() {
       </Tooltip>{" "}
       <Tooltip content="TailwindCSS" color="invert" placement="bottom">
         <svg
-          className="fill-slate-900 dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
+          className="fill-[#0A4D68] dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@ export default function TechstackC() {
       </Tooltip>
       <Tooltip content="MongoDB" color="invert" placement="bottom">
         <svg
-          className="fill-slate-900 dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
+          className="fill-[#0A4D68] dark:fill-slate-50  hover:-translate-y-2 duration-700 h-7"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

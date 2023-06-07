@@ -84,7 +84,7 @@
 @layer base {
   body {
     @apply dark:bg-slate-950 bg-slate-50;
-    @apply dark:text-slate-50 text-slate-950;
+    @apply dark:text-slate-50 text-[#0A4D68];
   }
 }
 
