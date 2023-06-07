@@ -15,15 +15,15 @@ export default function HeaderC() {
       )}
     >
       <div>
-        <h1 className="text-lg font-medium">{`Hi,👋 I'm`}</h1>
+        <h1 className="text-lg font-medium">{`Hello Everyone,👋 I'm`}</h1>
         <h1 className={clsx("text-5xl font-black")}>Febriqgal Purnama</h1>
         <div className="flex gap-2">
-          <h1>{"a"}</h1>
+          <h1>{"a "}</h1>
           <TypeAnimation
             sequence={[
-              " Web App Developer",
+              "Full-Stack Web Developer",
               1000,
-              " Mobile App Developer",
+              "Mobile App Developer",
               1000,
             ]}
             speed={50}
