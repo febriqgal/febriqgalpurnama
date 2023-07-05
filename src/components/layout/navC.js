@@ -1,84 +1,115 @@
-import { Switch } from "@nextui-org/react";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle,
+  Switch,
+} from "@nextui-org/react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useState } from "react";
+import Logo from "../../../public/logo.svg";
 import { MoonIcon } from "../icon/moonicon";
 import { SunIcon } from "../icon/sunicon";
-import Image from "next/image";
-import Logo from "../../../public/logo.svg";
+import { useRouter } from "next/router";
 export default function NavC() {
-  const { systemTheme, theme, setTheme } = useTheme();
-
+  const route = useRouter();
+  const { theme, setTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuItems = [
+    "Profile",
+    "Dashboard",
+    "Activity",
+    "Analytics",
+    "System",
+    "Deployments",
+    "My Settings",
+    "Team Settings",
+    "Help & Feedback",
+    "Log Out",
+  ];
   const navigation = [
     { title: "Project", href: "/project" },
     { title: "Portfolio", href: "/portfolio" },
     { title: "Certification", href: "/certification" },
     { title: "About Me", href: "/aboutme" },
   ];
-  const route = useRouter();
-  return (
-    <div>
-      {/* <div className="h-4 w-full bg-gradient-to-r from-slate-400 via-orange-300 to-yellow-200 border-b-2 decoration-white border-dotted border-slate-950 dark:border-slate-50"></div */}
-      <div className="bg-slate-50 dark:bg-transparent bg-transparent text-sm lg:text-base px-5 lg:px-36 dark:bg-slate-950 flex justify-between items-center py-7 justify-items-center  w-full ">
-        <div className="flex items-center lg:justify-center gap-4 place-items-center font-bold flex-wrap">
-          <Link href={"/"}>
-            <Image
-              className="translate-y-2"
-              title="Beranda Febriqgal Purnama, S.Kom."
-              width={50}
-              src={Logo}
-              alt="FP"
-            />
-          </Link>
-          {navigation.map((e, i) => {
-            return (
-              <Link
-                key={i}
-                className={
-                  route.pathname != e.href
-                    ? `hover:border-[#F1CCD6] duration-1000 transition-all hover:underline decoration-dotted underline-offset-[8px] decoration-[#0A4D68] hover:dark:decoration-yellow-200`
-                    : `border-[#F1CCD6] duration-1000 underline decoration-dotted underline-offset-[8px] decoration-[#0A4D68] transition-all dark:decoration-yellow-200 dark:decoration-dotted dark:underline-offset-[8px]`
-                }
-                href={e.href}
-              >
-                {e.title}
-              </Link>
-            );
-          })}
-        </div>
-        <Switch
-          onChange={() => {
-            if (theme == "dark") {
-              setTheme("light");
-              // localStorage.theme = "light";
-            } else {
-              setTheme("dark");
-              // localStorage.theme = "dark";
-            }
-          }}
-          checked={theme != "light" ? true : false}
-          size="sm"
-          css={{ color: "#0A4D68" }}
-          iconOn={<MoonIcon filled />}
-          iconOff={<SunIcon filled />}
-        />
 
-        {/* 
-        <Switch
-          onChange={() => {
-            if (theme == "dark") {
-              setTheme("light");
-              // localStorage.theme = "light";
-            } else {
-              setTheme("dark");
-              // localStorage.theme = "dark";
-            }
-          }}
-          squared
-          color="primary"
-          checked={theme == "dark" ? true : false}
-        /> */}
-      </div>
-    </div>
+  return (
+    <Navbar
+      position="sticky"
+      className="fixed"
+      onMenuOpenChange={setIsMenuOpen}
+    >
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+        <NavbarBrand className="items-center justify-center">
+          <Link title="Beranda Febriqgal Purnama" href={"/"}>
+            <Image className="mr-4" height={40} src={Logo} alt="#" />
+          </Link>
+        </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent className="hidden gap-4 sm:flex" justify="center">
+        {navigation.map((e, i) => {
+          return (
+            <Link
+              className={route.pathname != e.href ? ` ` : `font-bold`}
+              key={i}
+              href={e.href}
+            >
+              {e.title}
+            </Link>
+          );
+        })}
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <NavbarItem>
+          <Switch
+            color="default"
+            onChange={() => {
+              if (theme == "dark") {
+                setTheme("light");
+                // localStorage.theme = "light";
+              } else {
+                setTheme("dark");
+                // localStorage.theme = "dark";
+              }
+            }}
+            checked={theme != "light" ? true : false}
+            size="sm"
+            iconOn={<MoonIcon filled />}
+            iconOff={<SunIcon filled />}
+          />
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarMenu>
+        {navigation.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              color={
+                index === 2
+                  ? "primary"
+                  : index === navigation.length - 1
+                  ? "danger"
+                  : "foreground"
+              }
+              className="flex justify-center text-center"
+              href={item.href}
+              size="lg"
+            >
+              {item.title}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
   );
 }

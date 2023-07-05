@@ -1,62 +1,49 @@
-import React from "react";
-import { TypeAnimation } from "react-type-animation";
-import TechstackC from "./techstackC";
-import Image from "next/image";
+import { Button } from "@nextui-org/react";
 import clsx from "clsx";
-import Link from "next/link";
-import Gambar from "../../public/20.png";
-export default function HeaderC() {
-  return (
-    <div
-      className={clsx(
-        "flex flex-col items-center justify-center gap-0 lg:gap-40",
-        "w-full pb-10 mt-4 sm:mt-0",
-        "sm:flex-row"
-      )}
-    >
-      <div>
-        <h1 className="text-lg font-medium">{`Hello Everyone👋, I'm`}</h1>
-        <h1 className={clsx("text-5xl font-black")}>Febriqgal Purnama</h1>
-        <div className="flex gap-2">
-          <h1>{"a "}</h1>
-          <TypeAnimation
-            sequence={[
-              "Full-Stack Web Developer",
-              1000,
-              "Mobile App Developer",
-              1000,
-            ]}
-            speed={50}
-            style={{ fontSize: "16px" }}
-            repeat={Infinity}
-          />
-        </div>
-        <TechstackC />
-        <div className="flex lg:flex-row flex-col gap-2 mt-4 text-center">
-          <Link
-            className="px-4 py-2 border-2 rounded-md  text-slate-50 outline-none  shadow-lg transform active:scale-75 transition-transform border-dotted"
-            href={"/aboutme"}
-          >
-            Read About Me
-          </Link>
+import { useRouter } from "next/router";
+import { TypeAnimation } from "react-type-animation";
 
-          <Link
-            target="_blank"
-            className="px-4 py-2 bg-[#0A4D68] rounded-md text-slate-50 outline-none shadow-lg transform active:scale-75 transition-transform"
-            href={
-              "https://drive.google.com/file/d/12ZBFlxnnlX02AeTisHrPwAEPF0Qr7cGf/view?usp=share_link"
-            }
-          >
-            Download CV Me
-          </Link>
-        </div>
+import TechstackC from "./techstackC";
+export default function HeaderC() {
+  const route = useRouter();
+  return (
+    <div className="min-h-screen">
+      <h1 className="text-xl font-medium">{`Hello Everyone👋, I'm`}</h1>
+      <h1 className={clsx("text-5xl font-black")}>Febriqgal Purnama</h1>
+      <div className="flex gap-2">
+        <h1>{"a "}</h1>
+        <TypeAnimation
+          sequence={[
+            "Full-Stack Web Developer",
+            1000,
+            "Mobile App Developer",
+            1000,
+          ]}
+          speed={50}
+          style={{ fontSize: "16px" }}
+          repeat={Infinity}
+        />
       </div>
-      <Image
-        className="m-auto lg:m-0 my-8 lg:my-0"
-        height={"470"}
-        src={Gambar}
-        alt={"Gambar Header"}
-      />
+      <TechstackC />
+      <div className="flex flex-col gap-2 mt-4 text-center lg:flex-row">
+        <Button
+          onPress={() => {
+            route.push("/aboutme");
+          }}
+        >
+          Read About Me
+        </Button>
+        <Button
+          onPress={() => {
+            route.push(
+              "https://drive.google.com/file/d/12ZBFlxnnlX02AeTisHrPwAEPF0Qr7cGf/view?usp=share_link"
+            );
+          }}
+          className="bg-[#0A4D68] text-white dark:bg-white dark:text-black"
+        >
+          Download CV Me
+        </Button>
+      </div>
     </div>
   );
 }

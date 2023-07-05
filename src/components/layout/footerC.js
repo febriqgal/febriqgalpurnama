@@ -3,10 +3,9 @@ import { useRouter } from "next/router";
 /* This example requires Tailwind CSS v2.0+ */
 
 export default function FooterC() {
-  const route = useRouter();
   return (
-    <footer className="dark:bg-slate-950 bg-slate-100 rounded-t-3xl mt-10  border-t border-dotted border-slate-950 dark:border-slate-50">
-      <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8 text-center">
+    <footer className="mt-10 border-t border-dotted dark:bg-slate-950 bg-slate-100 rounded-t-3xl border-slate-950 dark:border-slate-50">
+      <div className="px-4 py-12 mx-auto overflow-hidden text-center max-w-7xl sm:px-6 lg:px-8">
         {/* <h1 className="mb-6">Febirgwqasd</h1> */}
         <div className="flex justify-center space-x-6">
           {/* ig */}
@@ -91,7 +90,7 @@ export default function FooterC() {
             </svg>
           </Link>
         </div>
-        <p className="mt-8 text-center text-base text-gray-400">
+        <p className="mt-8 text-base text-center text-gray-400">
           &copy; 2023 - Febriqgal, All rights reserved.
         </p>
       </div>

@@ -14,6 +14,14 @@
   line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+.truncate2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
 .description {
   display: inherit;
   justify-content: inherit;

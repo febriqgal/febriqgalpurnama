@@ -17,8 +17,8 @@ export default function ProjectC() {
   ];
   return (
     <section id="project" className="pt-10">
-      <div className="flex items-center justify-between  mb-5">
-        <h1 className="text-center font-bold">{`My Project`}</h1>
+      <div className="flex items-center justify-between mb-5">
+        <h1 className="font-bold text-center">{`My Project`}</h1>
         <Link
           href={"/project"}
           className="text-xs underline underline-offset-4 decoration-dotted hover:cursor-pointer"
@@ -36,21 +36,19 @@ export default function ProjectC() {
           return (
             <div
               key={i}
-              className={clsx(
-                "rounded-lg border border-slate-950  border-dashed  duration-500 bg-slate-100 w-full h-auto text-center",
-                "dark:border-slate-50 dark:bg-slate-900",
-                "hover:scale-105"
-              )}
+              className={
+                "rounded-lg border border-slate-950  border-dashed  duration-500  w-full h-auto text-center dark:border-slate-50   hover:scale-105"
+              }
             >
-              <div className="text-left p-4">
+              <div className="p-4 text-left">
                 <h1 className="font-bold">{`Portfolio ${i + 1}`}</h1>
-                <h1 className="text-sm text-justify mb-2">
+                <h1 className="mb-2 text-sm text-justify">
                   Ut sunt minim proident voluptate commodo aute enim minim eu
                   consequat.
                 </h1>
-                <div className="border-slate-950 border dark:border-slate-50 border-dashed rounded-lg overflow-clip">
+                <div className="border border-dashed rounded-lg border-slate-950 dark:border-slate-50 overflow-clip">
                   <img
-                    className="object-cover aspect-video w-full"
+                    className="object-cover w-full aspect-video"
                     src={`https://picsum.photos/id/87${i}/900/1000?grayscale&blur=2`}
                     alt="#"
                   />

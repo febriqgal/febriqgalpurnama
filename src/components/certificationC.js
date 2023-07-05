@@ -5,6 +5,7 @@ import Certi1 from "../../public/Pemrograman-Go-Lang-Pemula-sampai-Mahir.jpg";
 import Certi2 from "../../public/sertifikat_course_251_1937807_271121142617_2_1.jpg";
 import Certi3 from "../../public/CERTIFICATE_LANDING_PAGE~WGSRVHWV6R7G.jpeg";
 import { useRouter } from "next/router";
+import Arrow from "../../public/arrow.svg";
 import Styles from "../styles/Home.module.css";
 export default function CertificationC() {
   const route = useRouter();
@@ -37,36 +38,24 @@ export default function CertificationC() {
   return (
     <section id="#certification">
       <div className="flex items-center justify-between mt-10 mb-5">
-        <h1 className="text-center font-bold">{`My Certification`}</h1>
+        <h1 className="font-bold text-center">{`My Certification`}</h1>
         <Link
           href={"/certification"}
           className="text-xs underline underline-offset-4 decoration-dotted hover:cursor-pointer"
         >{`Show All >`}</Link>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {certification.map((e, i) => {
           return (
-            <div
-              key={i}
-              className="rounded-lg border border-slate-950 dark:border-slate-50 border-dashed hover:scale-105 duration-500  dark:bg-slate-900 bg-slate-100 w-full flex justify-between flex-col p-4"
-            >
-              <h1
-                title={e.title}
-                className={`${Styles.truncate1} font-bold`}
-              >{`${e.title}`}</h1>
-              <h1 className="text-xs mb-4">{`${e.date} - ${e.publisher}`}</h1>
-
-              <div className="border-slate-950 border dark:border-slate-50 border-dashed rounded-lg overflow-clip">
+            <div key={i} className="relative w-full h-full group">
+              <span className="absolute inset-0 border-2 border-[#0A4D68] border-dashed dark:border-slate-50 rounded-md" />
+              <div className="p-4 rounded-md relative flex flex-col items-center h-full  transition-transform transform -translate-x-2 -translate-y-2 border-2 group-hover:duration-200 border-[#0A4D68]    dark:border-slate-50 backdrop-blur-lg group-hover:-translate-x-1 group-hover:-translate-y-1">
                 <Image
-                  onClick={() => {
-                    route.push(`${e.credentials}`);
-                  }}
-                  className="object-cover aspect-video w-full hover:cursor-pointer"
+                  className="object-cover w-full h-full rounded-md"
                   src={e.img}
                   alt="#"
                 />
               </div>
-              <div className="flex items-center justify-between"></div>
             </div>
           );
         })}

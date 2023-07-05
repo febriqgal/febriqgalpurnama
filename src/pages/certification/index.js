@@ -14,6 +14,8 @@ import Styles from "../../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
+import Arrow from "../../../public/arrow.svg";
+
 export default function Certification() {
   const certification = [
     {
@@ -86,34 +88,26 @@ export default function Certification() {
     },
   ];
   return (
-    <Layout titlee={'Certification - '}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <Layout titlee={"Certification - "}>
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {certification.map((e, i) => {
           return (
-            <div
+            <a
+              title={e.title}
+              target="_blank"
               key={i}
-              className="text-start  p-4 rounded-lg border border-slate-950 dark:border-slate-50 border-dashed hover:scale-105 duration-500  dark:bg-slate-900 bg-slate-100 w-full"
+              href={e.href}
+              className="relative w-full h-full group"
             >
-              <h1
-                title={e.title}
-                className={`${Styles.truncate1} font-bold`}
-              >{`${e.title}`}</h1>
-              <h1 className="text-xs mb-4">{`${e.date} - ${e.publisher}`}</h1>
-              <div className="border-slate-950 border dark:border-slate-50 border-dashed rounded-lg overflow-clip">
+              <span className="absolute inset-0 border-2 border-[#0A4D68] border-dashed dark:border-slate-50 rounded-md" />
+              <div className="p-4 rounded-md relative flex flex-col items-center h-full  transition-transform transform -translate-x-2 -translate-y-2 border-2 group-hover:duration-200 border-[#0A4D68]    dark:border-slate-50 backdrop-blur-lg group-hover:-translate-x-1 group-hover:-translate-y-1">
                 <Image
-                  className="object-cover aspect-video w-full"
+                  className="object-cover w-full h-full rounded-md"
                   src={e.img}
                   alt="#"
                 />
               </div>
-              <div className="flex items-center justify-between">
-                <Link
-                  target="_blank"
-                  href={`${e.credentials}`}
-                  className="text-sm mt-4 m-auto underline underline-offset-4 decoration-dotted hover:cursor-pointer"
-                >{`Credentials >`}</Link>
-              </div>
-            </div>
+            </a>
           );
         })}
       </div>
