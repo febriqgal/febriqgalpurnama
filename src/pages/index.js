@@ -14,7 +14,6 @@ export default function Home() {
       <HeaderC />
       <CertificationC />
       <PortfolioC />
-      <h1 id="ww">sss</h1>
     </Layout>
   );
 }
