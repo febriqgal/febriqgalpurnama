@@ -25,17 +25,17 @@ export default function Layout({ children }) {
     damping: 30,
     restDelta: 0.001,
   });
-  const [clientWindowHeight, setClientWindowHeight] = useState("");
 
-  let backgroundTransparacyVar = clientWindowHeight / 600;
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
+    const handleContextmenu = (e) => {
+      e.preventDefault();
+    };
+    document.addEventListener("contextmenu", handleContextmenu);
+    return function cleanup() {
+      document.removeEventListener("contextmenu", handleContextmenu);
+    };
+  }, []);
 
-  const handleScroll = () => {
-    setClientWindowHeight(window.scrollY);
-  };
   return (
     <div className={`${fira.className}`}>
       <Head>
@@ -46,36 +46,9 @@ export default function Layout({ children }) {
       </Head>
 
       <NavC />
-      {backgroundTransparacyVar > 0.5 ? (
-        <div
-          onClick={() => {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-          }}
-          className="border dark:border-slate-100 p-1 rounded-lg animate__animated animate__backInDown fixed right-5 bottom-5 z-[99999] hover:cursor-pointer duration-500 transition-all"
-        >
-          <svg
-            className="h-5 dark:fill-white fill-slate-900"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              opacity="0.4"
-              d="M7 9L17 9C19.2091 9 21 10.7909 21 13V17C21 19.2091 19.2091 21 17 21H7C4.79086 21 3 19.2091 3 17L3 13C3 10.7909 4.79086 9 7 9Z"
-            />
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M8.46967 6.53033C8.17678 6.23744 8.17678 5.76256 8.46967 5.46967L11.4697 2.46967C11.7626 2.17678 12.2374 2.17678 12.5303 2.46967L15.5303 5.46967C15.8232 5.76256 15.8232 6.23744 15.5303 6.53033C15.2374 6.82322 14.7626 6.82322 14.4697 6.53033L12.75 4.81066L12.75 15C12.75 15.4142 12.4142 15.75 12 15.75C11.5858 15.75 11.25 15.4142 11.25 15L11.25 4.81066L9.53033 6.53033C9.23744 6.82322 8.76256 6.82322 8.46967 6.53033Z"
-            />
-          </svg>
-        </div>
-      ) : (
-        <></>
-      )}
+
       <motion.div
-        className="progress-bar bg-[#094E68] bottom-0 h-1 z-[99999] rounded-full fixed left-0 right-0 origin-top"
+        className="progress-bar bg-[#094E68] dark:bg-white bottom-0 h-1 z-[99999] rounded-full fixed left-0 right-0 origin-top"
         style={{ scaleX }}
       />
 
