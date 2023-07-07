@@ -16,7 +16,19 @@ import Logo from "../../../public/logo.svg";
 import { MoonIcon } from "../icon/moonicon";
 import { SunIcon } from "../icon/sunicon";
 import { useRouter } from "next/router";
+import { Fira_Code } from "next/font/google";
 import LogoFp from "../icon/logo";
+const fira = Fira_Code({
+  subsets: [
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "greek-ext",
+    "latin",
+    "latin-ext",
+  ],
+  weight: ["300", "400", "500", "600", "700"],
+});
 export default function NavC() {
   const route = useRouter();
   const { theme, setTheme } = useTheme();
@@ -32,7 +44,7 @@ export default function NavC() {
   return (
     <Navbar
       position="sticky"
-      className="fixed"
+      className={`fixed`}
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent>
@@ -94,7 +106,7 @@ export default function NavC() {
                   ? "danger"
                   : "foreground"
               }
-              className="flex justify-center text-center"
+              className={`${fira.className} flex justify-center text-center`}
               href={item.href}
               size="lg"
             >
