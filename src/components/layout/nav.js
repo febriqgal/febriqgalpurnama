@@ -16,22 +16,12 @@ import Logo from "../../../public/logo.svg";
 import { MoonIcon } from "../icon/moonicon";
 import { SunIcon } from "../icon/sunicon";
 import { useRouter } from "next/router";
+import LogoFp from "../icon/logo";
 export default function NavC() {
   const route = useRouter();
   const { theme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
+
   const navigation = [
     { title: "Project", href: "/project" },
     { title: "Portfolio", href: "/portfolio" },
@@ -52,7 +42,10 @@ export default function NavC() {
         />
         <NavbarBrand className="items-center justify-center">
           <Link title="Beranda Febriqgal Purnama" href={"/"}>
-            <Image className="mr-4" height={40} src={Logo} alt="#" />
+            <LogoFp
+              className={"dark:fill-none mr-2  fill-[#094E68] h-[40px]"}
+              iconColor={"#fff"}
+            />
           </Link>
         </NavbarBrand>
       </NavbarContent>

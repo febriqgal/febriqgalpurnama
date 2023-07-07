@@ -49,7 +49,7 @@ export default function CertificationC() {
           return (
             <div key={i} className="relative w-full h-full group">
               <span className="absolute inset-0 border-2 border-[#0A4D68] border-dashed dark:border-slate-50 rounded-md" />
-              <div className="p-4 rounded-md relative flex flex-col items-center h-full  transition-transform transform -translate-x-2 -translate-y-2 border-2 group-hover:duration-200 border-[#0A4D68]    dark:border-slate-50 backdrop-blur-lg group-hover:-translate-x-1 group-hover:-translate-y-1">
+              <div className="p-4 rounded-md relative flex flex-col items-center h-[200px]  transition-transform transform -translate-x-2 -translate-y-2 border-2 group-hover:duration-200 border-[#0A4D68]    dark:border-slate-50 backdrop-blur-lg group-hover:-translate-x-1 group-hover:-translate-y-1">
                 <Image
                   className="object-cover w-full h-full rounded-md"
                   src={e.img}
