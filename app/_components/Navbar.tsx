@@ -1,17 +1,15 @@
 "use client";
+import Logo from "@/public/logo.png";
 import { Button } from "@nextui-org/react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { DarkMode, Home, LightMode, Mouse } from "react-huge-icons/solid";
-import Logo from "@/public/logo.png";
-import Image from "next/image";
+import { DarkMode, LightMode, Mouse } from "react-huge-icons/solid";
 export default function Navbar() {
-  const [current, setCurrent] = useState("");
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-
   const pathname = usePathname();
   const navigation: Navigation[] = [
     {

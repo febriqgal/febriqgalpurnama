@@ -1,5 +1,5 @@
 export const AppConfig = {
-  title: "Febriqgal Purnama",
+  title: "Febriqgal Purnama, S.Kom.",
 };
 
 export const LinkCV =
