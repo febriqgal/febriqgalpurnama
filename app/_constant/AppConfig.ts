@@ -1,5 +1,6 @@
 export const AppConfig = {
   title: "Febriqgal Purnama, S.Kom.",
+  description: "Architecting the Future: Building Code, Crafting Innovation.",
 };
 
 export const LinkCV =
