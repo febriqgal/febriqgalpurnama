@@ -23,7 +23,8 @@ export default function Navbar() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  mounted && null;
+
   return (
     <>
       <div className="fixed w-full z-[9999] backdrop-blur-xl">
