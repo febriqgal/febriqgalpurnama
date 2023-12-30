@@ -1,18 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { Button, Card, CardFooter } from "@nextui-org/react";
-import "aos/dist/aos.css";
-import Image from "next/image";
-import Link from "next/link";
+import AlekRangMudo from "@/public/alekrangmudo.png";
 import BPTD from "@/public/bptd.png";
 import FebriqgalPurnama from "@/public/febriqgalpurnama.png";
 import PuskesmasKambang from "@/public/puskesmaskambang.png";
 import SDN42KambangHarapan from "@/public/sdn42kambangharapan.png";
 import SIMSPPOB from "@/public/sims-ppob.png";
-import AlekRangMudo from "@/public/alekrangmudo.png";
-import { useEffect } from "react";
+import { Button, Card, CardFooter } from "@nextui-org/react";
 import Aos from "aos";
-import { title } from "process";
+import "aos/dist/aos.css";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect } from "react";
 export default function Portfolio() {
   useEffect(() => {
     Aos.init();
@@ -62,11 +61,7 @@ export default function Portfolio() {
             radius="lg"
             className="border-none h-[300px]"
           >
-            <Image
-              alt="Woman listing to music"
-              className="object-cover "
-              src={e.img}
-            />
+            <Image alt={e.title} className="object-cover " src={e.img} />
             <CardFooter className="absolute bottom-0 z-10 justify-between px-10 py-8 backdrop-brightness-50 backdrop-blur">
               <p className="text-lg font-bold text-white">{e.title}</p>
               <Link target="_blank" href={e.link}>

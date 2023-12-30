@@ -4,13 +4,9 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import {
-  DarkMode,
-  Home,
-  LightMode,
-  MenuUser,
-  Mouse,
-} from "react-huge-icons/solid";
+import { DarkMode, Home, LightMode, Mouse } from "react-huge-icons/solid";
+import Logo from "@/public/logo.png";
+import Image from "next/image";
 export default function Navbar() {
   const [current, setCurrent] = useState("");
   const [mounted, setMounted] = useState(false);
@@ -18,11 +14,6 @@ export default function Navbar() {
 
   const pathname = usePathname();
   const navigation: Navigation[] = [
-    {
-      icon: <Home />,
-      name: "Home",
-      href: "/",
-    },
     {
       name: "Project",
       href: "/project",
@@ -39,7 +30,10 @@ export default function Navbar() {
     <>
       <div className="fixed w-full z-[9999] backdrop-blur-xl">
         <div className="container flex items-center justify-between w-full px-5 mx-auto xl:px-28">
-          <div className="flex items-center justify-between gap-4 py-4">
+          <div className="flex items-center justify-between gap-2 py-4">
+            <Link href="/">
+              <Image src={Logo} alt="logo" width={50} height={50} />
+            </Link>
             <div className="flex gap-2">
               {navigation.map((e: Navigation, i: number) =>
                 theme == "dark" ? (
@@ -60,9 +54,7 @@ export default function Navbar() {
                     startContent={e.icon}
                     as={Link}
                     variant={
-                      pathname == e.href && theme == "light"
-                        ? "shadow"
-                        : "light"
+                      pathname == e.href && theme == "light" ? "solid" : "light"
                     }
                     color="primary"
                     key={i}

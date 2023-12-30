@@ -16,18 +16,20 @@ import {
   SiX,
 } from "@icons-pack/react-simple-icons";
 import { Button } from "@nextui-org/react";
-import Link from "next/link";
-import React, { useEffect } from "react";
-import { DocumentText } from "react-huge-icons/solid";
-import { LinkCV } from "../_constant/AppConfig";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { ThemeProvider, useTheme } from "next-themes";
+import { useTheme } from "next-themes";
+import Link from "next/link";
+import { useEffect } from "react";
+import { DocumentText } from "react-huge-icons/solid";
+import { LinkCV } from "../_constant/AppConfig";
 export default function HomeSection() {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
+
   useEffect(() => {
     AOS.init();
   });
+
   return (
     <section
       id="home"
@@ -71,7 +73,7 @@ export default function HomeSection() {
           href={`${LinkCV}`}
           startContent={<DocumentText />}
           className="mt-8"
-          variant={theme === "dark" ? "flat" : "solid"}
+          variant={theme === "dark" ? "flat" : "shadow"}
           color="primary"
         >
           Download Resume
