@@ -18,14 +18,11 @@ import {
 import { Button } from "@nextui-org/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useEffect } from "react";
 import { DocumentText } from "react-huge-icons/solid";
 import { LinkCV } from "../_constant/AppConfig";
 export default function HomeSection() {
-  const { theme } = useTheme();
-
   useEffect(() => {
     AOS.init();
   });
@@ -73,7 +70,6 @@ export default function HomeSection() {
           href={`${LinkCV}`}
           startContent={<DocumentText />}
           className="mt-8"
-          variant={theme === "dark" ? "flat" : "shadow"}
           color="primary"
         >
           Download Resume
