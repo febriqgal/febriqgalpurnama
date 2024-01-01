@@ -22,10 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className}`}>
+      <body className={`${inter.className} text-primary`}>
         <Providers>
           <Navbar />
-          <main className="container mx-auto ">{children}</main>
+          <main className="container mx-auto">{children}</main>
         </Providers>
       </body>
     </html>

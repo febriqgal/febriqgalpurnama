@@ -1,5 +1,6 @@
 "use client";
 import Logo from "@/public/logo.png";
+import LogoBlue from "@/public/logo-black.png";
 import { Button } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
@@ -23,7 +24,7 @@ export default function Navbar() {
     setMounted(true);
   }, []);
 
-  mounted && null;
+  if (!mounted) return null;
 
   return (
     <>
@@ -31,7 +32,12 @@ export default function Navbar() {
         <div className="container flex items-center justify-between w-full px-5 mx-auto xl:px-28">
           <div className="flex items-center justify-between gap-2 py-4">
             <Link href="/">
-              <Image src={Logo} alt="logo" width={50} height={50} />
+              <Image
+                src={theme != "dark" ? LogoBlue : Logo}
+                alt="logo"
+                width={50}
+                height={50}
+              />
             </Link>
             <div className="flex gap-2">
               {navigation.map((e: Navigation, i: number) =>
